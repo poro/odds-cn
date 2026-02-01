@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://odds.cn"),
   title: {
     default: "Odds.cn - Compare Sports Betting Odds | Best Lines & Bonuses 2025",
     template: "%s | Odds.cn",

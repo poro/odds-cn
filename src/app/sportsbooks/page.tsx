@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 };
 
 export default function SportsbooksPage() {
-  const welcomePromos = promos.filter(p => p.type === 'welcome');
   const exclusivePromos = promos.filter(p => p.type === 'exclusive');
 
   return (
