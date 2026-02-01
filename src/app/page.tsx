@@ -226,6 +226,23 @@ export default function Home() {
               </ul>
             </div>
 
+            {/* DFS Lineup Builder CTA */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-purple-500/30 rounded-xl p-6">
+              <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 mb-3">
+                📋 Play DFS?
+              </Badge>
+              <h3 className="text-lg font-bold text-white mb-2">Free Lineup Builder</h3>
+              <p className="text-sm text-zinc-400 mb-4">Build winning lineups for DraftKings & FanDuel with our free optimizer</p>
+              <a
+                href="https://lineup.guru"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center py-2 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors"
+              >
+                Build Lineup →
+              </a>
+            </div>
+
             {/* Betting Guides */}
             <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
               <h3 className="text-lg font-bold text-white mb-4">📚 Betting Guides</h3>

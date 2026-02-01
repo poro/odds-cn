@@ -129,6 +129,24 @@ export default async function SportPage({ params }: SportPageProps) {
                 Read Guide →
               </Link>
             </div>
+
+            {/* DFS Lineup Builder CTA */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-purple-500/30 rounded-xl p-6">
+              <h3 className="text-lg font-bold text-white mb-2">
+                📋 Build Your {category.name} Lineup
+              </h3>
+              <p className="text-sm text-zinc-400 mb-4">
+                Playing DFS? Build optimal lineups for DraftKings & FanDuel with our free lineup optimizer.
+              </p>
+              <a
+                href="https://lineup.guru"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center py-2 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors"
+              >
+                Build Lineup →
+              </a>
+            </div>
           </aside>
         </div>
       </div>

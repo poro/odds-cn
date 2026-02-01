@@ -372,6 +372,25 @@ export default async function SportsbookPage({ params }: SportsbookPageProps) {
               </CardContent>
             </Card>
 
+            {/* DFS Lineup Builder CTA */}
+            <Card className="bg-gradient-to-br from-purple-500/20 to-purple-600/10 border-purple-500/30">
+              <CardContent className="p-6">
+                <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 mb-3">
+                  📋 DFS Players
+                </Badge>
+                <p className="font-bold text-white mb-2">Build a Lineup Before You Bet</p>
+                <p className="text-sm text-zinc-400 mb-4">Free lineup optimizer for DraftKings & FanDuel contests</p>
+                <a
+                  href="https://lineup.guru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center py-2 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors"
+                >
+                  Build Lineup →
+                </a>
+              </CardContent>
+            </Card>
+
             {/* CTA */}
             <Card className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 border-emerald-500/30">
               <CardContent className="p-6 text-center">

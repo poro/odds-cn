@@ -100,6 +100,25 @@ export default function SuperBowlPage() {
         </div>
       </section>
 
+      {/* DFS Lineup Builder CTA */}
+      <section className="bg-gradient-to-r from-purple-500/10 via-purple-500/5 to-transparent border-b border-purple-500/20">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-3">
+              <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30">
+                📋 DFS Contest?
+              </Badge>
+              <span className="text-white font-medium">Build your winning Super Bowl lineup for DraftKings & FanDuel</span>
+            </div>
+            <a href="https://lineup.guru" target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="bg-purple-500 hover:bg-purple-600 text-white">
+                Build Super Bowl Lineup →
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-3 gap-8">
@@ -422,6 +441,27 @@ export default function SuperBowlPage() {
                 Full Promo Guide →
               </Link>
             </div>
+
+            {/* DFS Lineup Builder CTA */}
+            <Card className="bg-gradient-to-br from-purple-500/20 to-purple-600/10 border-purple-500/30">
+              <CardContent className="p-6">
+                <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30 mb-3">
+                  📋 DFS Players
+                </Badge>
+                <h3 className="text-lg font-bold text-white mb-2">Build Your Super Bowl Lineup</h3>
+                <p className="text-sm text-zinc-400 mb-4">
+                  Free lineup optimizer for DraftKings & FanDuel contests. Build winning lineups with our smart tools.
+                </p>
+                <a
+                  href="https://lineup.guru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors"
+                >
+                  Build Lineup →
+                </a>
+              </CardContent>
+            </Card>
 
             {/* Quick Links */}
             <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6">

@@ -67,6 +67,7 @@ export function Footer() {
               <li><Link href="/guides/how-to-read-odds" className="text-sm text-zinc-400 hover:text-emerald-400">How to Read Odds</Link></li>
               <li><Link href="/calculators" className="text-sm text-zinc-400 hover:text-emerald-400">Betting Calculators</Link></li>
               <li><Link href="/guides/bankroll-management" className="text-sm text-zinc-400 hover:text-emerald-400">Bankroll Tips</Link></li>
+              <li><a href="https://lineup.guru" target="_blank" rel="noopener noreferrer" className="text-sm text-purple-400 hover:text-purple-300">📋 Lineup Builder</a></li>
             </ul>
           </div>
 
@@ -118,6 +119,24 @@ export function Footer() {
               className="px-4 py-2 bg-zinc-800 hover:bg-emerald-500/20 border border-zinc-700 hover:border-emerald-500/50 rounded-lg text-sm text-zinc-300 hover:text-emerald-400 transition-colors"
             >
               Caesars - $1,000 Bonus
+            </a>
+          </div>
+        </div>
+
+        {/* Lineup Builder CTA */}
+        <div className="mt-6 p-6 bg-gradient-to-r from-purple-500/10 via-purple-500/5 to-transparent border border-purple-500/20 rounded-xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <h3 className="font-semibold text-white mb-1">📋 Play DFS? Try Our Free Lineup Builder</h3>
+              <p className="text-sm text-zinc-400">Build winning lineups for DraftKings & FanDuel contests</p>
+            </div>
+            <a 
+              href="https://lineup.guru" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg transition-colors whitespace-nowrap"
+            >
+              Build Lineup →
             </a>
           </div>
         </div>
