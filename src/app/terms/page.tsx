@@ -19,7 +19,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="text-zinc-400">
-            Last updated: January 2025
+            Last updated: February 2026
           </p>
         </div>
       </section>

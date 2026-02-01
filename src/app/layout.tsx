@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://odds.cn"),
   title: {
-    default: "Odds.cn - Compare Sports Betting Odds | Best Lines & Bonuses 2025",
+    default: "Odds.cn - Compare Sports Betting Odds | Best Lines & Bonuses 2026",
     template: "%s | Odds.cn",
   },
   description: "Compare betting odds from top sportsbooks instantly. Find the best NFL, NBA, MLB, NHL odds. Get exclusive bonuses up to $1,500. Updated in real-time.",

@@ -6,8 +6,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Best Sportsbooks 2025 - Compare Bonuses Up To $1,500 | Odds.cn',
-  description: 'Compare the best online sportsbooks for 2025. Get exclusive welcome bonuses up to $1,500. Expert reviews, ratings, and detailed comparisons.',
+  title: 'Best Sportsbooks 2026 - Compare Bonuses Up To $1,500 | Odds.cn',
+  description: 'Compare the best online sportsbooks for 2026. Get exclusive welcome bonuses up to $1,500. Expert reviews, ratings, and detailed comparisons.',
   keywords: 'best sportsbooks, sportsbook reviews, betting sites, sportsbook bonuses, DraftKings bonus, FanDuel bonus, BetMGM bonus',
 };
 
@@ -21,7 +21,7 @@ export default function SportsbooksPage() {
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="text-center">
             <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 mb-4">
-              🏆 Updated January 2025
+              🏆 Updated February 2026
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Best <span className="text-emerald-400">Sportsbooks</span>

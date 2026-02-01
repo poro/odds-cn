@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: SportsbookPageProps): Promise
   if (!book) return {};
   
   return {
-    title: `${book.name} Review 2025 - ${book.bonusAmount} Bonus | Odds.cn`,
+    title: `${book.name} Review 2026 - ${book.bonusAmount} Bonus | Odds.cn`,
     description: `${book.name} sportsbook review. Get ${book.bonus}. Read our expert analysis of odds, features, and user experience.`,
   };
 }

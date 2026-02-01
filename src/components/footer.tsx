@@ -85,7 +85,7 @@ export function Footer() {
 
         {/* Best Sportsbooks Banner */}
         <div className="mt-12 p-6 bg-zinc-900 border border-zinc-800 rounded-xl">
-          <h3 className="font-semibold text-white mb-4">🏆 Top Rated Sportsbooks for 2025</h3>
+          <h3 className="font-semibold text-white mb-4">🏆 Top Rated Sportsbooks for 2026</h3>
           <div className="flex flex-wrap gap-4">
             <a 
               href="https://sportsbook.draftkings.com/?affiliate=oddscn" 
@@ -125,7 +125,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-zinc-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-zinc-500">
-              © 2025 odds.cn. All rights reserved.
+              © 2026 odds.cn. All rights reserved.
             </p>
             <p className="text-xs text-zinc-500 text-center md:text-right max-w-2xl">
               Gambling involves risk. Please gamble responsibly and only bet what you can afford to lose. 
