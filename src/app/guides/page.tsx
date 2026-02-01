@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function GuidesPage() {
+  const superBowlGuides = guides.filter(g => g.category === 'Super Bowl');
   const beginnerGuides = guides.filter(g => g.category === 'Beginner');
   const strategyGuides = guides.filter(g => g.category === 'Strategy');
   const advancedGuides = guides.filter(g => g.category === 'Advanced');
@@ -40,6 +41,44 @@ export default function GuidesPage() {
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* Super Bowl Featured Section */}
+        {superBowlGuides.length > 0 && (
+          <section className="mb-12">
+            <div className="bg-gradient-to-r from-red-500/20 via-red-500/10 to-transparent border border-red-500/30 rounded-xl p-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
+                <div>
+                  <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-2">
+                    🏈 Super Bowl LIX — Feb 9, 2025
+                  </Badge>
+                  <h2 className="text-2xl font-bold text-white mb-2">Super Bowl Betting Guides</h2>
+                  <p className="text-zinc-400 max-w-xl">
+                    Chiefs vs Eagles complete betting coverage. Odds, props, promos, and expert picks.
+                  </p>
+                </div>
+                <Link href="/super-bowl">
+                  <Button className="bg-red-500 hover:bg-red-600 whitespace-nowrap">
+                    Super Bowl Hub →
+                  </Button>
+                </Link>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {superBowlGuides.slice(0, 6).map((guide) => (
+                  <Link
+                    key={guide.id}
+                    href={`/guides/${guide.slug}`}
+                    className="block p-4 bg-zinc-900/50 border border-zinc-800 rounded-lg hover:border-red-500/50 transition-colors group"
+                  >
+                    <h3 className="font-medium text-white group-hover:text-red-400 transition-colors text-sm mb-1">
+                      {guide.title}
+                    </h3>
+                    <span className="text-xs text-zinc-500">{guide.readTime} read</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Quick Start */}
         <section className="mb-12">
           <div className="bg-gradient-to-r from-emerald-500/20 via-emerald-500/10 to-transparent border border-emerald-500/30 rounded-xl p-8">

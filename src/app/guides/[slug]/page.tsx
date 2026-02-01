@@ -1,4 +1,5 @@
 import { guides, sportsbooks } from '@/lib/mock-data';
+import { superBowlGuideContent, superBowlPromos } from '@/lib/super-bowl-data';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -252,9 +253,11 @@ export default async function GuidePage({ params }: GuidePageProps) {
     notFound();
   }
 
-  const content = guideContent[slug] || defaultContent;
+  const content = guideContent[slug] || superBowlGuideContent[slug] || defaultContent;
+  const isSuperBowlGuide = guide.category === 'Super Bowl';
   const relatedGuides = guides.filter(g => g.category === guide.category && g.id !== guide.id).slice(0, 3);
   const topSportsbooks = sportsbooks.slice(0, 2);
+  const sbPromo = isSuperBowlGuide ? superBowlPromos[0] : null;
 
   return (
     <div className="min-h-screen">
@@ -274,10 +277,12 @@ export default async function GuidePage({ params }: GuidePageProps) {
                   ? 'bg-purple-500/20 text-purple-400 border-purple-500/30' 
                   : guide.category === 'Sport-Specific'
                     ? 'bg-orange-500/20 text-orange-400 border-orange-500/30'
-                    : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                    : guide.category === 'Super Bowl'
+                      ? 'bg-red-500/20 text-red-400 border-red-500/30'
+                      : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
             }`}
           >
-            {guide.category}
+            {guide.category === 'Super Bowl' ? '🏈 Super Bowl LIX' : guide.category}
           </Badge>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {guide.title}
@@ -334,26 +339,72 @@ export default async function GuidePage({ params }: GuidePageProps) {
 
           {/* Sidebar */}
           <aside className="space-y-6">
-            {/* Quick Bonus CTA */}
-            <Card className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 border-emerald-500/30">
-              <CardContent className="p-6 text-center">
-                <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 mb-3">
-                  ⭐ Top Pick
-                </Badge>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {topSportsbooks[0].name}
-                </h3>
-                <p className="text-2xl font-bold text-emerald-400 mb-4">
-                  {topSportsbooks[0].bonus}
-                </p>
-                <Button asChild className="w-full bg-emerald-500 hover:bg-emerald-600">
-                  <a href={topSportsbooks[0].affiliateUrl} target="_blank" rel="noopener noreferrer">
-                    Claim Bonus →
-                  </a>
-                </Button>
-                <p className="text-xs text-zinc-500 mt-2">21+ • T&Cs Apply</p>
-              </CardContent>
-            </Card>
+            {/* Super Bowl CTA for SB guides */}
+            {isSuperBowlGuide && sbPromo ? (
+              <Card className="bg-gradient-to-br from-red-500/20 to-red-600/10 border-red-500/30">
+                <CardContent className="p-6 text-center">
+                  <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-3">
+                    🏈 Super Bowl Bonus
+                  </Badge>
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {sbPromo.sportsbook}
+                  </h3>
+                  <p className="text-2xl font-bold text-red-400 mb-2">
+                    {sbPromo.bonus}
+                  </p>
+                  <p className="text-sm text-zinc-400 mb-4">{sbPromo.title}</p>
+                  {sbPromo.code && (
+                    <div className="bg-zinc-900 border border-dashed border-zinc-600 rounded-lg p-2 mb-4 text-center">
+                      <span className="text-xs text-zinc-500">Code: </span>
+                      <span className="font-mono font-bold text-red-400">{sbPromo.code}</span>
+                    </div>
+                  )}
+                  <Button asChild className="w-full bg-red-500 hover:bg-red-600">
+                    <a href={sbPromo.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                      Claim Bonus →
+                    </a>
+                  </Button>
+                  <p className="text-xs text-zinc-500 mt-2">21+ • T&Cs Apply</p>
+                </CardContent>
+              </Card>
+            ) : (
+              <Card className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 border-emerald-500/30">
+                <CardContent className="p-6 text-center">
+                  <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 mb-3">
+                    ⭐ Top Pick
+                  </Badge>
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {topSportsbooks[0].name}
+                  </h3>
+                  <p className="text-2xl font-bold text-emerald-400 mb-4">
+                    {topSportsbooks[0].bonus}
+                  </p>
+                  <Button asChild className="w-full bg-emerald-500 hover:bg-emerald-600">
+                    <a href={topSportsbooks[0].affiliateUrl} target="_blank" rel="noopener noreferrer">
+                      Claim Bonus →
+                    </a>
+                  </Button>
+                  <p className="text-xs text-zinc-500 mt-2">21+ • T&Cs Apply</p>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Super Bowl Hub Link for SB guides */}
+            {isSuperBowlGuide && (
+              <Card className="bg-zinc-900 border-zinc-800">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-white mb-3">🏈 Super Bowl Hub</h3>
+                  <p className="text-sm text-zinc-400 mb-4">
+                    Get all Super Bowl LIX odds, props, and promos in one place.
+                  </p>
+                  <Link href="/super-bowl">
+                    <Button className="w-full bg-red-500 hover:bg-red-600">
+                      View Super Bowl Hub →
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            )}
 
             {/* Related Guides */}
             {relatedGuides.length > 0 && (

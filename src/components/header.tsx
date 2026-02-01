@@ -73,13 +73,13 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* CTA Button */}
+          {/* Super Bowl CTA Button */}
           <div className="hidden md:block">
             <Link
-              href="/sportsbooks"
-              className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded-lg transition-colors"
+              href="/super-bowl"
+              className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
-              Get $1,500 Bonus →
+              🏈 Super Bowl →
             </Link>
           </div>
 
@@ -143,11 +143,11 @@ export function Header() {
                 Calculators
               </Link>
               <Link
-                href="/sportsbooks"
-                className="mx-4 mt-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded-lg text-center"
+                href="/super-bowl"
+                className="mx-4 mt-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-lg text-center flex items-center justify-center gap-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Get $1,500 Bonus →
+                🏈 Super Bowl Odds →
               </Link>
             </nav>
           </div>
