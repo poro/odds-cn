@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: "Compare betting odds from top sportsbooks instantly. Find the best lines and exclusive bonuses up to $1,500.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Odds.cn - Sports Betting Odds Comparison",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Odds.cn - Compare Sports Betting Odds",
     description: "Compare betting odds from top sportsbooks. Find the best lines and bonuses.",
-    images: ["/og-image.png"],
+    images: ["/og-image.svg"],
   },
   robots: {
     index: true,
@@ -82,7 +82,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: "Odds.cn",
   url: "https://odds.cn",
-  logo: "https://odds.cn/logo.png",
+  logo: "https://odds.cn/logo.svg",
   sameAs: [
     "https://twitter.com/oddscn",
     "https://facebook.com/oddscn",
