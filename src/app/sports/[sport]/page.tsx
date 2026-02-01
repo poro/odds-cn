@@ -1,10 +1,9 @@
-import { games, sportCategories, sportsbooks } from '@/lib/mock-data';
-import { OddsTable } from '@/components/odds-table';
+import { sportCategories, sportsbooks } from '@/lib/mock-data';
 import { SportsbookCardCompact } from '@/components/sportsbook-card';
 import { SportTabs } from '@/components/sport-tabs';
-import { Badge } from '@/components/ui/badge';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { SportLiveScoresWrapper } from './SportLiveScoresWrapper';
 
 interface SportPageProps {
   params: Promise<{ sport: string }>;
@@ -22,8 +21,8 @@ export async function generateMetadata({ params }: SportPageProps) {
   if (!category) return {};
   
   return {
-    title: `${category.name} Odds - Compare ${category.name} Betting Lines | Odds.cn`,
-    description: `Compare ${category.name} betting odds from top sportsbooks. Find the best ${category.name} lines, spreads, and moneylines.`,
+    title: `${category.name} Scores & Odds - Live ${category.name} Betting Lines | Odds.cn`,
+    description: `Live ${category.name} scores and betting odds from top sportsbooks. Find the best ${category.name} lines, spreads, and moneylines.`,
   };
 }
 
@@ -35,9 +34,6 @@ export default async function SportPage({ params }: SportPageProps) {
     notFound();
   }
 
-  const sportGames = games.filter(g => g.league === category.league);
-  const liveGames = sportGames.filter(g => g.status === 'live');
-  const upcomingGames = sportGames.filter(g => g.status === 'upcoming');
   const topSportsbooks = sportsbooks.slice(0, 3);
 
   return (
@@ -49,10 +45,10 @@ export default async function SportPage({ params }: SportPageProps) {
             <span className="text-4xl">{category.icon}</span>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-white">
-                {category.name} <span className="text-emerald-400">Odds</span>
+                {category.name} <span className="text-emerald-400">Live Scores</span>
               </h1>
               <p className="text-zinc-400">
-                Compare {category.name} betting lines from top sportsbooks
+                Real-time scores and betting odds from top sportsbooks
               </p>
             </div>
           </div>
@@ -67,59 +63,9 @@ export default async function SportPage({ params }: SportPageProps) {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Odds Section */}
-          <div className="lg:col-span-2 space-y-8">
-            {sportGames.length === 0 ? (
-              <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-12 text-center">
-                <div className="text-6xl mb-4">{category.icon}</div>
-                <h2 className="text-xl font-bold text-white mb-2">No Games Scheduled</h2>
-                <p className="text-zinc-400 mb-4">
-                  Check back later for upcoming {category.name} matchups and odds.
-                </p>
-                <Link 
-                  href="/"
-                  className="inline-block px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition-colors"
-                >
-                  View All Sports
-                </Link>
-              </div>
-            ) : (
-              <>
-                {/* Live Games */}
-                {liveGames.length > 0 && (
-                  <section>
-                    <div className="flex items-center gap-2 mb-4">
-                      <h2 className="text-xl font-bold text-white">🔴 Live Now</h2>
-                      <Badge className="bg-red-500/20 text-red-400 border-red-500/30">
-                        {liveGames.length} {liveGames.length === 1 ? 'game' : 'games'}
-                      </Badge>
-                    </div>
-                    <div className="space-y-4">
-                      {liveGames.map((game) => (
-                        <OddsTable key={game.id} game={game} />
-                      ))}
-                    </div>
-                  </section>
-                )}
-
-                {/* Upcoming Games */}
-                {upcomingGames.length > 0 && (
-                  <section>
-                    <div className="flex items-center gap-2 mb-4">
-                      <h2 className="text-xl font-bold text-white">📅 Upcoming</h2>
-                      <span className="text-sm text-zinc-500">
-                        ({upcomingGames.length} {upcomingGames.length === 1 ? 'game' : 'games'})
-                      </span>
-                    </div>
-                    <div className="space-y-4">
-                      {upcomingGames.map((game) => (
-                        <OddsTable key={game.id} game={game} />
-                      ))}
-                    </div>
-                  </section>
-                )}
-              </>
-            )}
+          {/* Live Scores Section */}
+          <div className="lg:col-span-2">
+            <SportLiveScoresWrapper sport={sport} />
           </div>
 
           {/* Sidebar */}

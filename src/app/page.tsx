@@ -1,14 +1,12 @@
-import { games, sportsbooks, promos } from '@/lib/mock-data';
-import { OddsTable } from '@/components/odds-table';
+import { sportsbooks, promos } from '@/lib/mock-data';
 import { SportsbookCardCompact } from '@/components/sportsbook-card';
 import { SportTabs } from '@/components/sport-tabs';
 import { LiveScoresTicker } from '@/components/live-scores';
+import { HomeLiveGames } from '@/components/HomeLiveGames';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
 export default function Home() {
-  const liveGames = games.filter(g => g.status === 'live');
-  const upcomingGames = games.filter(g => g.status === 'upcoming');
   const topSportsbooks = sportsbooks.slice(0, 3);
   const topBonus = sportsbooks.reduce((max, book) => {
     const amount = parseInt(book.bonusAmount.replace(/\D/g, ''));
@@ -27,33 +25,33 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-12">
           <div className="text-center mb-8">
             <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 mb-4">
-              🔥 Updated in Real-Time
+              🔴 Real-Time Live Scores
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Compare <span className="text-emerald-400">Betting Odds</span> Instantly
+              Live <span className="text-emerald-400">Sports Scores</span> & Odds
             </h1>
             <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-              Find the best lines across top sportsbooks. Never leave money on the table.
+              Real-time scores from ESPN. Compare betting odds across top sportsbooks.
             </p>
           </div>
 
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             <div className="bg-zinc-800/50 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-emerald-400">{games.length}+</div>
-              <div className="text-xs text-zinc-500 uppercase">Games Today</div>
+              <div className="text-2xl font-bold text-emerald-400">8</div>
+              <div className="text-xs text-zinc-500 uppercase">Sports</div>
             </div>
             <div className="bg-zinc-800/50 rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">{sportsbooks.length}</div>
               <div className="text-xs text-zinc-500 uppercase">Sportsbooks</div>
             </div>
             <div className="bg-zinc-800/50 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-emerald-400">8</div>
-              <div className="text-xs text-zinc-500 uppercase">Sports</div>
+              <div className="text-2xl font-bold text-red-400">LIVE</div>
+              <div className="text-xs text-zinc-500 uppercase">Scores</div>
             </div>
             <div className="bg-zinc-800/50 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-emerald-400">24/7</div>
-              <div className="text-xs text-zinc-500 uppercase">Live Updates</div>
+              <div className="text-2xl font-bold text-emerald-400">30s</div>
+              <div className="text-xs text-zinc-500 uppercase">Updates</div>
             </div>
           </div>
         </div>
@@ -67,51 +65,9 @@ export default function Home() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Odds Section */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Live Games */}
-            {liveGames.length > 0 && (
-              <section>
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                  <h2 className="text-xl font-bold text-white">Live Now</h2>
-                  <Badge className="bg-red-500/20 text-red-400 border-red-500/30">
-                    {liveGames.length} {liveGames.length === 1 ? 'game' : 'games'}
-                  </Badge>
-                </div>
-                <div className="space-y-4">
-                  {liveGames.map((game) => (
-                    <OddsTable key={game.id} game={game} />
-                  ))}
-                </div>
-              </section>
-            )}
-
-            {/* Upcoming Games */}
-            <section>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                  <h2 className="text-xl font-bold text-white">📅 Upcoming Games</h2>
-                  <span className="text-sm text-zinc-500">({upcomingGames.length} games)</span>
-                </div>
-              </div>
-              <div className="space-y-4">
-                {upcomingGames.slice(0, 8).map((game) => (
-                  <OddsTable key={game.id} game={game} />
-                ))}
-              </div>
-              
-              {upcomingGames.length > 8 && (
-                <div className="mt-6 text-center">
-                  <Link 
-                    href="/sports/nfl" 
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white rounded-lg transition-colors"
-                  >
-                    View All Games →
-                  </Link>
-                </div>
-              )}
-            </section>
+          {/* Live Games Section */}
+          <div className="lg:col-span-2">
+            <HomeLiveGames />
           </div>
 
           {/* Sidebar */}
