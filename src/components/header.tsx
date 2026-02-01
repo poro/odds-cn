@@ -64,6 +64,13 @@ export function Header() {
             >
               Guides
             </Link>
+
+            <Link 
+              href="/calculators" 
+              className="px-4 py-2 text-sm font-medium text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg transition-colors"
+            >
+              Calculators
+            </Link>
           </nav>
 
           {/* CTA Button */}
@@ -72,7 +79,7 @@ export function Header() {
               href="/sportsbooks"
               className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded-lg transition-colors"
             >
-              Get Best Bonus →
+              Get $1,500 Bonus →
             </Link>
           </div>
 
@@ -95,31 +102,52 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-zinc-800">
             <nav className="flex flex-col gap-2">
-              <Link href="/" className="px-4 py-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg">
+              <Link 
+                href="/" 
+                className="px-4 py-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Live Odds
               </Link>
               <div className="px-4 py-2 text-xs uppercase text-zinc-500 font-semibold">Sports</div>
-              {sportCategories.slice(0, 5).map((sport) => (
+              {sportCategories.slice(0, 6).map((sport) => (
                 <Link
                   key={sport.id}
                   href={`/sports/${sport.id}`}
                   className="px-4 py-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg flex items-center gap-2"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   <span>{sport.icon}</span>
                   {sport.name}
                 </Link>
               ))}
-              <Link href="/sportsbooks" className="px-4 py-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg">
+              <Link 
+                href="/sportsbooks" 
+                className="px-4 py-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Sportsbooks
               </Link>
-              <Link href="/guides" className="px-4 py-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg">
+              <Link 
+                href="/guides" 
+                className="px-4 py-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Guides
+              </Link>
+              <Link 
+                href="/calculators" 
+                className="px-4 py-2 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-lg"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Calculators
               </Link>
               <Link
                 href="/sportsbooks"
                 className="mx-4 mt-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded-lg text-center"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                Get Best Bonus →
+                Get $1,500 Bonus →
               </Link>
             </nav>
           </div>

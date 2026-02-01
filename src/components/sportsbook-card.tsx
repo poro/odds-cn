@@ -2,6 +2,7 @@ import { Sportsbook } from '@/lib/mock-data';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 interface SportsbookCardProps {
   sportsbook: Sportsbook;
@@ -34,7 +35,9 @@ export function SportsbookCard({ sportsbook, rank }: SportsbookCardProps) {
           {/* Rank & Logo */}
           <div className="flex items-center gap-4 p-6 md:w-1/4 bg-zinc-800/50">
             {rank && (
-              <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg ${
+                rank === 1 ? 'bg-yellow-500' : rank === 2 ? 'bg-zinc-400' : rank === 3 ? 'bg-amber-600' : 'bg-emerald-500'
+              }`}>
                 {rank}
               </div>
             )}
@@ -44,8 +47,17 @@ export function SportsbookCard({ sportsbook, rank }: SportsbookCardProps) {
                   {sportsbook.name.charAt(0)}
                 </span>
               </div>
-              <h3 className="font-bold text-white text-lg">{sportsbook.name}</h3>
+              <Link href={`/sportsbooks/${sportsbook.id}`}>
+                <h3 className="font-bold text-white text-lg hover:text-emerald-400 transition-colors">
+                  {sportsbook.name}
+                </h3>
+              </Link>
               <StarRating rating={sportsbook.rating} />
+              {sportsbook.bestFor && (
+                <Badge className="mt-2 bg-yellow-500/20 text-yellow-400 border-yellow-500/30 text-xs">
+                  🏆 {sportsbook.bestFor}
+                </Badge>
+              )}
             </div>
           </div>
 
@@ -54,7 +66,12 @@ export function SportsbookCard({ sportsbook, rank }: SportsbookCardProps) {
             <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 mb-3">
               Welcome Bonus
             </Badge>
-            <p className="text-2xl font-bold text-white mb-2">{sportsbook.bonus}</p>
+            <p className="text-2xl font-bold text-white mb-1">{sportsbook.bonus}</p>
+            {sportsbook.bonusCode && (
+              <p className="text-sm text-zinc-400 mb-3">
+                Use code: <code className="text-emerald-400 font-mono">{sportsbook.bonusCode}</code>
+              </p>
+            )}
             <div className="flex flex-wrap gap-2 mt-4">
               {sportsbook.features.slice(0, 3).map((feature) => (
                 <Badge 
@@ -69,16 +86,24 @@ export function SportsbookCard({ sportsbook, rank }: SportsbookCardProps) {
           </div>
 
           {/* CTA */}
-          <div className="p-6 border-t md:border-t-0 md:border-l border-zinc-800 flex flex-col justify-center md:w-1/4">
+          <div className="p-6 border-t md:border-t-0 md:border-l border-zinc-800 flex flex-col justify-center md:w-1/4 gap-2">
             <Button 
               asChild
               className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold"
             >
-              <a href={sportsbook.affiliateUrl}>
-                Claim Bonus →
+              <a href={sportsbook.affiliateUrl} target="_blank" rel="noopener noreferrer">
+                Claim {sportsbook.bonusAmount} →
               </a>
             </Button>
-            <p className="text-xs text-zinc-500 text-center mt-2">
+            <Link href={`/sportsbooks/${sportsbook.id}`}>
+              <Button 
+                variant="outline"
+                className="w-full border-zinc-700 text-zinc-300 hover:bg-zinc-800"
+              >
+                Read Review
+              </Button>
+            </Link>
+            <p className="text-xs text-zinc-500 text-center">
               21+ • T&Cs Apply
             </p>
           </div>
@@ -88,32 +113,60 @@ export function SportsbookCard({ sportsbook, rank }: SportsbookCardProps) {
   );
 }
 
-export function SportsbookCardCompact({ sportsbook }: { sportsbook: Sportsbook }) {
+interface SportsbookCardCompactProps {
+  sportsbook: Sportsbook;
+  rank?: number;
+}
+
+export function SportsbookCardCompact({ sportsbook, rank }: SportsbookCardCompactProps) {
   return (
     <Card className="bg-zinc-900 border-zinc-800 hover:border-emerald-500/50 transition-colors">
       <CardContent className="p-4">
         <div className="flex items-center gap-3 mb-3">
+          {rank && (
+            <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white font-bold text-xs ${
+              rank === 1 ? 'bg-yellow-500' : rank === 2 ? 'bg-zinc-400' : rank === 3 ? 'bg-amber-600' : 'bg-emerald-500'
+            }`}>
+              {rank}
+            </div>
+          )}
           <div className="w-10 h-10 bg-gradient-to-br from-emerald-400/20 to-emerald-600/20 rounded-lg flex items-center justify-center">
             <span className="text-xl font-bold text-emerald-400">
               {sportsbook.name.charAt(0)}
             </span>
           </div>
-          <div>
-            <h3 className="font-semibold text-white">{sportsbook.name}</h3>
-            <StarRating rating={sportsbook.rating} />
+          <div className="flex-1">
+            <Link href={`/sportsbooks/${sportsbook.id}`}>
+              <h3 className="font-semibold text-white hover:text-emerald-400 transition-colors">
+                {sportsbook.name}
+              </h3>
+            </Link>
+            <div className="flex items-center gap-2">
+              <StarRating rating={sportsbook.rating} />
+              {sportsbook.bestFor && (
+                <Badge className="bg-yellow-500/10 text-yellow-400 border-yellow-500/20 text-[10px] py-0">
+                  {sportsbook.bestFor}
+                </Badge>
+              )}
+            </div>
           </div>
         </div>
         
         <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-3 mb-3">
           <p className="text-sm text-emerald-400 font-medium">{sportsbook.bonus}</p>
+          {sportsbook.bonusCode && (
+            <p className="text-xs text-zinc-500 mt-1">
+              Code: <span className="text-emerald-400 font-mono">{sportsbook.bonusCode}</span>
+            </p>
+          )}
         </div>
 
         <Button 
           asChild
           className="w-full bg-emerald-500 hover:bg-emerald-600 text-white text-sm"
         >
-          <a href={sportsbook.affiliateUrl}>
-            Get Bonus
+          <a href={sportsbook.affiliateUrl} target="_blank" rel="noopener noreferrer">
+            Get {sportsbook.bonusAmount} Bonus →
           </a>
         </Button>
       </CardContent>
