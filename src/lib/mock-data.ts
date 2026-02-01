@@ -732,20 +732,20 @@ export const guides: Guide[] = [
     category: 'Advanced',
     readTime: '10 min'
   },
-  // Super Bowl LIX Guides
+  // Super Bowl LX Guides
   {
     id: 'sb-1',
-    title: 'Super Bowl LIX Odds: Chiefs vs Eagles Complete Betting Guide',
-    slug: 'super-bowl-lix-odds-chiefs-eagles',
-    excerpt: 'Complete betting guide for Super Bowl LIX featuring the Kansas City Chiefs vs Philadelphia Eagles. Get the latest odds, picks, and predictions.',
+    title: 'Super Bowl LX Odds: Seahawks vs Patriots Complete Betting Guide',
+    slug: 'super-bowl-lx-odds-seahawks-patriots',
+    excerpt: 'Complete betting guide for Super Bowl LX featuring the Seattle Seahawks vs New England Patriots. Get the latest odds, picks, and predictions.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '12 min'
   },
   {
     id: 'sb-2',
-    title: 'Super Bowl Prop Bets 2025: 50 Best Props to Bet',
-    slug: 'super-bowl-prop-bets-2025',
+    title: 'Super Bowl Prop Bets 2026: 50 Best Props to Bet',
+    slug: 'super-bowl-prop-bets-2026',
     excerpt: 'The ultimate guide to Super Bowl prop bets. From player props to halftime show bets, we cover 50+ props with our expert picks.',
     category: 'Super Bowl',
     sport: 'NFL',
@@ -753,9 +753,9 @@ export const guides: Guide[] = [
   },
   {
     id: 'sb-3',
-    title: 'Super Bowl MVP Odds and Best Bets 2025',
-    slug: 'super-bowl-mvp-odds-2025',
-    excerpt: 'Who will win Super Bowl MVP? Breaking down the MVP odds for Chiefs vs Eagles with analysis and value picks.',
+    title: 'Super Bowl MVP Odds and Best Bets 2026',
+    slug: 'super-bowl-mvp-odds-2026',
+    excerpt: 'Who will win Super Bowl MVP? Breaking down the MVP odds for Seahawks vs Patriots with analysis and value picks.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '8 min'
@@ -771,8 +771,8 @@ export const guides: Guide[] = [
   },
   {
     id: 'sb-5',
-    title: 'Best Super Bowl Betting Promos and Bonuses 2025',
-    slug: 'super-bowl-betting-promos-2025',
+    title: 'Best Super Bowl Betting Promos and Bonuses 2026',
+    slug: 'super-bowl-betting-promos-2026',
     excerpt: 'Claim over $5,000 in Super Bowl betting bonuses from DraftKings, FanDuel, BetMGM, and more. Exclusive promo codes inside.',
     category: 'Super Bowl',
     sport: 'NFL',
@@ -782,7 +782,7 @@ export const guides: Guide[] = [
     id: 'sb-6',
     title: 'Super Bowl Over/Under: Total Points Prediction',
     slug: 'super-bowl-over-under-total',
-    excerpt: 'Should you bet the over or under in Super Bowl LIX? Analysis of the total and our expert prediction.',
+    excerpt: 'Should you bet the over or under in Super Bowl LX? Analysis of the total and our expert prediction.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '8 min'
@@ -791,25 +791,25 @@ export const guides: Guide[] = [
     id: 'sb-7',
     title: 'Super Bowl Spread: Point Spread Analysis and Pick',
     slug: 'super-bowl-spread-analysis',
-    excerpt: 'Breaking down the Super Bowl spread between the Chiefs and Eagles with statistical analysis and our ATS pick.',
+    excerpt: 'Breaking down the Super Bowl spread between the Seahawks and Patriots with statistical analysis and our ATS pick.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '9 min'
   },
   {
     id: 'sb-8',
-    title: 'First Touchdown Scorer Odds: Super Bowl LIX',
+    title: 'First Touchdown Scorer Odds: Super Bowl LX',
     slug: 'super-bowl-first-touchdown-scorer',
-    excerpt: 'Who will score the first touchdown in Super Bowl LIX? Complete odds breakdown and our best bet.',
+    excerpt: 'Who will score the first touchdown in Super Bowl LX? Complete odds breakdown and our best bet.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '7 min'
   },
   {
     id: 'sb-9',
-    title: 'Super Bowl Halftime Show Props: Kendrick Lamar Bets',
+    title: 'Super Bowl Halftime Show Props: Bad Bunny Bets',
     slug: 'super-bowl-halftime-show-props',
-    excerpt: "Bet on Kendrick Lamar's halftime performance! First song, guest appearances, and more prop bets.",
+    excerpt: "Bet on Bad Bunny's halftime performance! First song, guest appearances, and more prop bets.",
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '6 min'

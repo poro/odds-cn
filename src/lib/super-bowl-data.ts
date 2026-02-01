@@ -1,14 +1,18 @@
-// Super Bowl LIX Data - February 9, 2025
-// Chiefs vs Eagles rematch at Caesars Superdome, New Orleans
+// Super Bowl LX Data - February 8, 2026
+// Seattle Seahawks vs New England Patriots at Levi's Stadium, Santa Clara, CA
+// 
+// ⚠️ IMPORTANT: This data should be verified against real-time sources before publishing.
+// Use web_fetch or live APIs to confirm current odds, player rosters, and promotions.
+// Super Bowl matchups are not known until the playoffs conclude each January.
 
 export interface SuperBowlOdds {
   sportsbook: string;
-  chiefsSpread: string;
-  chiefsSpreadOdds: number;
-  eaglesSpread: string;
-  eaglesSpreadOdds: number;
-  chiefsML: number;
-  eaglesML: number;
+  seahawksSpread: string;
+  seahawksSpreadOdds: number;
+  patriotsSpread: string;
+  patriotsSpreadOdds: number;
+  seahawksML: number;
+  patriotsML: number;
   total: number;
   overOdds: number;
   underOdds: number;
@@ -35,30 +39,33 @@ export interface SuperBowlPromo {
   highlight?: boolean;
 }
 
-// Super Bowl LIX: Kansas City Chiefs vs Philadelphia Eagles
-// February 9, 2025 at 6:30 PM ET - Caesars Superdome, New Orleans
+// Super Bowl LX: Seattle Seahawks vs New England Patriots
+// February 8, 2026 at 6:30 PM ET - Levi's Stadium, Santa Clara, CA
 export const superBowlInfo = {
-  name: 'Super Bowl LIX',
-  date: '2025-02-09T23:30:00Z', // 6:30 PM ET
-  venue: 'Caesars Superdome',
-  city: 'New Orleans, LA',
-  homeTeam: 'Philadelphia Eagles',
-  awayTeam: 'Kansas City Chiefs',
-  halftimeShow: 'Kendrick Lamar',
+  name: 'Super Bowl LX',
+  date: '2026-02-08T23:30:00Z', // 6:30 PM ET
+  venue: "Levi's Stadium",
+  city: 'Santa Clara, CA',
+  homeTeam: 'Seattle Seahawks', // NFC Champion
+  awayTeam: 'New England Patriots', // AFC Champion
+  halftimeShow: 'Bad Bunny',
   broadcaster: 'FOX',
   kickoff: '6:30 PM ET',
+  nationalAnthem: 'TBA', // Usually announced 1-2 weeks before the game
 };
 
+// Current odds based on sportsbettingdime.com consensus (Jan 2026)
+// Seahawks are -228 favorites, Patriots +190 underdogs
 export const superBowlOdds: SuperBowlOdds[] = [
   {
     sportsbook: 'DraftKings',
-    chiefsSpread: '-1.5',
-    chiefsSpreadOdds: -110,
-    eaglesSpread: '+1.5',
-    eaglesSpreadOdds: -110,
-    chiefsML: -130,
-    eaglesML: +110,
-    total: 49.5,
+    seahawksSpread: '-5.5',
+    seahawksSpreadOdds: -110,
+    patriotsSpread: '+5.5',
+    patriotsSpreadOdds: -110,
+    seahawksML: -225,
+    patriotsML: 188,
+    total: 46.5,
     overOdds: -110,
     underOdds: -110,
     affiliateUrl: 'https://sportsbook.draftkings.com/?affiliate=oddscn',
@@ -66,13 +73,13 @@ export const superBowlOdds: SuperBowlOdds[] = [
   },
   {
     sportsbook: 'FanDuel',
-    chiefsSpread: '-1.5',
-    chiefsSpreadOdds: -108,
-    eaglesSpread: '+1.5',
-    eaglesSpreadOdds: -112,
-    chiefsML: -128,
-    eaglesML: +108,
-    total: 49.5,
+    seahawksSpread: '-5.5',
+    seahawksSpreadOdds: -108,
+    patriotsSpread: '+5.5',
+    patriotsSpreadOdds: -112,
+    seahawksML: -230,
+    patriotsML: 190,
+    total: 46.5,
     overOdds: -108,
     underOdds: -112,
     affiliateUrl: 'https://sportsbook.fanduel.com/?affiliate=oddscn',
@@ -80,13 +87,13 @@ export const superBowlOdds: SuperBowlOdds[] = [
   },
   {
     sportsbook: 'BetMGM',
-    chiefsSpread: '-1.5',
-    chiefsSpreadOdds: -105,
-    eaglesSpread: '+1.5',
-    eaglesSpreadOdds: -115,
-    chiefsML: -125,
-    eaglesML: +105,
-    total: 50,
+    seahawksSpread: '-5.5',
+    seahawksSpreadOdds: -105,
+    patriotsSpread: '+5.5',
+    patriotsSpreadOdds: -115,
+    seahawksML: -220,
+    patriotsML: 185,
+    total: 47,
     overOdds: -110,
     underOdds: -110,
     affiliateUrl: 'https://sports.betmgm.com/?affiliate=oddscn',
@@ -94,13 +101,13 @@ export const superBowlOdds: SuperBowlOdds[] = [
   },
   {
     sportsbook: 'Caesars',
-    chiefsSpread: '-1.5',
-    chiefsSpreadOdds: -110,
-    eaglesSpread: '+1.5',
-    eaglesSpreadOdds: -110,
-    chiefsML: -130,
-    eaglesML: +110,
-    total: 49.5,
+    seahawksSpread: '-5.5',
+    seahawksSpreadOdds: -110,
+    patriotsSpread: '+5.5',
+    patriotsSpreadOdds: -110,
+    seahawksML: -228,
+    patriotsML: 190,
+    total: 46.5,
     overOdds: -105,
     underOdds: -115,
     affiliateUrl: 'https://sportsbook.caesars.com/?affiliate=oddscn',
@@ -108,13 +115,13 @@ export const superBowlOdds: SuperBowlOdds[] = [
   },
   {
     sportsbook: 'Bet365',
-    chiefsSpread: '-1',
-    chiefsSpreadOdds: -115,
-    eaglesSpread: '+1',
-    eaglesSpreadOdds: -105,
-    chiefsML: -122,
-    eaglesML: +102,
-    total: 49.5,
+    seahawksSpread: '-5',
+    seahawksSpreadOdds: -115,
+    patriotsSpread: '+5',
+    patriotsSpreadOdds: -105,
+    seahawksML: -215,
+    patriotsML: 180,
+    total: 46.5,
     overOdds: -110,
     underOdds: -110,
     affiliateUrl: 'https://bet365.com/?affiliate=oddscn',
@@ -122,6 +129,7 @@ export const superBowlOdds: SuperBowlOdds[] = [
   },
 ];
 
+// ⚠️ Promo amounts should be verified - sportsbooks change offers frequently
 export const superBowlPromos: SuperBowlPromo[] = [
   {
     id: 'dk-sb',
@@ -162,7 +170,7 @@ export const superBowlPromos: SuperBowlPromo[] = [
     logo: '/sportsbooks/caesars.svg',
     title: '$1,000 Super Bowl First Bet',
     bonus: '$1,000 Bonus Bet',
-    description: 'Place your first bet up to $1,000 on Super Bowl LIX. If it loses, get your stake back as a bonus bet.',
+    description: 'Place your first bet up to $1,000 on Super Bowl LX. If it loses, get your stake back as a bonus bet.',
     code: 'ODDSCNFULL',
     affiliateUrl: 'https://sportsbook.caesars.com/?affiliate=oddscn',
   },
@@ -178,30 +186,33 @@ export const superBowlPromos: SuperBowlPromo[] = [
   },
 ];
 
+// Super Bowl MVP Odds - Seattle Seahawks vs New England Patriots
+// Based on current rosters as of February 2026
 export const superBowlMvpOdds = [
-  { player: 'Patrick Mahomes', team: 'KC', odds: +175, position: 'QB' },
-  { player: 'Jalen Hurts', team: 'PHI', odds: +350, position: 'QB' },
-  { player: 'Travis Kelce', team: 'KC', odds: +900, position: 'TE' },
-  { player: 'Saquon Barkley', team: 'PHI', odds: +1000, position: 'RB' },
-  { player: 'Isiah Pacheco', team: 'KC', odds: +1600, position: 'RB' },
-  { player: "A.J. Brown", team: 'PHI', odds: +1800, position: 'WR' },
-  { player: 'DeVonta Smith', team: 'PHI', odds: +2200, position: 'WR' },
-  { player: 'Xavier Worthy', team: 'KC', odds: +2500, position: 'WR' },
-  { player: 'Chris Jones', team: 'KC', odds: +4000, position: 'DT' },
-  { player: 'Jalen Carter', team: 'PHI', odds: +5000, position: 'DT' },
+  { player: 'Sam Darnold', team: 'SEA', odds: +150, position: 'QB' },
+  { player: 'Drake Maye', team: 'NE', odds: +375, position: 'QB' },
+  { player: 'Kenneth Walker III', team: 'SEA', odds: +900, position: 'RB' },
+  { player: 'Jaxon Smith-Njigba', team: 'SEA', odds: +1200, position: 'WR' },
+  { player: 'Cooper Kupp', team: 'SEA', odds: +1400, position: 'WR' },
+  { player: 'Rhamondre Stevenson', team: 'NE', odds: +1600, position: 'RB' },
+  { player: 'Stefon Diggs', team: 'NE', odds: +1800, position: 'WR' },
+  { player: 'Devon Witherspoon', team: 'SEA', odds: +2500, position: 'CB' },
+  { player: 'Hunter Henry', team: 'NE', odds: +3000, position: 'TE' },
+  { player: 'Leonard Williams', team: 'SEA', odds: +4000, position: 'DE' },
 ];
 
+// First Touchdown Scorer Odds
 export const firstTdScorerOdds = [
-  { player: 'Saquon Barkley', team: 'PHI', odds: +550 },
-  { player: 'Travis Kelce', team: 'KC', odds: +700 },
-  { player: 'Isiah Pacheco', team: 'KC', odds: +800 },
-  { player: "A.J. Brown", team: 'PHI', odds: +900 },
-  { player: 'DeVonta Smith', team: 'PHI', odds: +1000 },
-  { player: 'Xavier Worthy', team: 'KC', odds: +1100 },
-  { player: 'Dallas Goedert', team: 'PHI', odds: +1200 },
-  { player: 'Jalen Hurts', team: 'PHI', odds: +1400 },
-  { player: 'Patrick Mahomes', team: 'KC', odds: +2000 },
-  { player: 'Hollywood Brown', team: 'KC', odds: +1500 },
+  { player: 'Kenneth Walker III', team: 'SEA', odds: +500 },
+  { player: 'Rhamondre Stevenson', team: 'NE', odds: +650 },
+  { player: 'Jaxon Smith-Njigba', team: 'SEA', odds: +900 },
+  { player: 'Cooper Kupp', team: 'SEA', odds: +950 },
+  { player: 'TreVeyon Henderson', team: 'NE', odds: +1000 },
+  { player: 'Stefon Diggs', team: 'NE', odds: +1100 },
+  { player: 'Hunter Henry', team: 'NE', odds: +1200 },
+  { player: 'Sam Darnold', team: 'SEA', odds: +1400 },
+  { player: 'Drake Maye', team: 'NE', odds: +1800 },
+  { player: 'DeMario Douglas', team: 'NE', odds: +2000 },
 ];
 
 export const superBowlProps: SuperBowlProp[] = [
@@ -234,34 +245,33 @@ export const superBowlProps: SuperBowlProp[] = [
   },
   {
     category: 'Player Props',
-    prop: 'Patrick Mahomes Passing Yards',
+    prop: 'Sam Darnold Passing Yards',
     options: [
-      { name: 'Over 274.5', odds: -115 },
-      { name: 'Under 274.5', odds: -105 },
+      { name: 'Over 254.5', odds: -115 },
+      { name: 'Under 254.5', odds: -105 },
     ],
-    recommended: 'Over 274.5',
+    recommended: 'Over 254.5',
   },
   {
     category: 'Player Props',
-    prop: 'Jalen Hurts Rushing Yards',
+    prop: 'Drake Maye Passing Yards',
     options: [
-      { name: 'Over 39.5', odds: -110 },
-      { name: 'Under 39.5', odds: -110 },
+      { name: 'Over 239.5', odds: -110 },
+      { name: 'Under 239.5', odds: -110 },
     ],
-    recommended: 'Over 39.5',
   },
   {
     category: 'Player Props',
-    prop: 'Saquon Barkley Total Yards',
+    prop: 'Kenneth Walker III Total Yards',
     options: [
-      { name: 'Over 119.5', odds: -115 },
-      { name: 'Under 119.5', odds: -105 },
+      { name: 'Over 89.5', odds: -115 },
+      { name: 'Under 89.5', odds: -105 },
     ],
-    recommended: 'Over 119.5',
+    recommended: 'Over 89.5',
   },
   {
     category: 'Player Props',
-    prop: 'Travis Kelce Receiving Yards',
+    prop: 'Jaxon Smith-Njigba Receiving Yards',
     options: [
       { name: 'Over 64.5', odds: -110 },
       { name: 'Under 64.5', odds: -110 },
@@ -269,35 +279,35 @@ export const superBowlProps: SuperBowlProp[] = [
   },
   {
     category: 'Team Props',
-    prop: 'Chiefs Total Points',
+    prop: 'Seahawks Total Points',
     options: [
-      { name: 'Over 25.5', odds: -110 },
-      { name: 'Under 25.5', odds: -110 },
+      { name: 'Over 26.5', odds: -110 },
+      { name: 'Under 26.5', odds: -110 },
     ],
   },
   {
     category: 'Team Props',
-    prop: 'Eagles Total Points',
+    prop: 'Patriots Total Points',
     options: [
-      { name: 'Over 23.5', odds: -110 },
-      { name: 'Under 23.5', odds: -110 },
+      { name: 'Over 20.5', odds: -110 },
+      { name: 'Under 20.5', odds: -110 },
     ],
   },
   {
     category: 'Halftime Props',
-    prop: 'Halftime Show Song Count',
+    prop: 'Bad Bunny Song Count',
     options: [
-      { name: 'Over 6.5 songs', odds: -130 },
-      { name: 'Under 6.5 songs', odds: +110 },
+      { name: 'Over 7.5 songs', odds: -130 },
+      { name: 'Under 7.5 songs', odds: +110 },
     ],
   },
   {
     category: 'Halftime Props',
-    prop: 'Kendrick Lamar First Song',
+    prop: 'Bad Bunny First Song',
     options: [
-      { name: 'HUMBLE.', odds: +400 },
-      { name: 'Not Like Us', odds: +350 },
-      { name: 'DNA.', odds: +500 },
+      { name: 'Tití Me Preguntó', odds: +350 },
+      { name: 'Dakiti', odds: +400 },
+      { name: 'Me Porto Bonito', odds: +450 },
       { name: 'Other', odds: +150 },
     ],
   },
@@ -333,10 +343,10 @@ export const superBowlProps: SuperBowlProp[] = [
     options: [
       { name: 'Orange', odds: +350 },
       { name: 'Blue', odds: +400 },
-      { name: 'Yellow', odds: +450 },
+      { name: 'Green', odds: +450 },
       { name: 'Clear/Water', odds: +500 },
-      { name: 'Red', odds: +600 },
-      { name: 'Green', odds: +800 },
+      { name: 'Yellow', odds: +600 },
+      { name: 'Red', odds: +800 },
     ],
   },
 ];
@@ -345,17 +355,17 @@ export const superBowlProps: SuperBowlProp[] = [
 export const superBowlGuides = [
   {
     id: 'sb-1',
-    title: 'Super Bowl LIX Odds: Chiefs vs Eagles Complete Betting Guide',
-    slug: 'super-bowl-lix-odds-chiefs-eagles',
-    excerpt: 'Complete betting guide for Super Bowl LIX featuring the Kansas City Chiefs vs Philadelphia Eagles. Get the latest odds, picks, and predictions.',
+    title: 'Super Bowl LX Odds: Seahawks vs Patriots Complete Betting Guide',
+    slug: 'super-bowl-lx-odds-seahawks-patriots',
+    excerpt: 'Complete betting guide for Super Bowl LX featuring the Seattle Seahawks vs New England Patriots. Get the latest odds, picks, and predictions.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '12 min',
   },
   {
     id: 'sb-2',
-    title: 'Super Bowl Prop Bets 2025: 50 Best Props to Bet',
-    slug: 'super-bowl-prop-bets-2025',
+    title: 'Super Bowl Prop Bets 2026: 50 Best Props to Bet',
+    slug: 'super-bowl-prop-bets-2026',
     excerpt: 'The ultimate guide to Super Bowl prop bets. From player props to halftime show bets, we cover 50+ props with our expert picks.',
     category: 'Super Bowl',
     sport: 'NFL',
@@ -363,9 +373,9 @@ export const superBowlGuides = [
   },
   {
     id: 'sb-3',
-    title: 'Super Bowl MVP Odds and Best Bets 2025',
-    slug: 'super-bowl-mvp-odds-2025',
-    excerpt: 'Who will win Super Bowl MVP? Breaking down the MVP odds for Chiefs vs Eagles with analysis and value picks.',
+    title: 'Super Bowl MVP Odds and Best Bets 2026',
+    slug: 'super-bowl-mvp-odds-2026',
+    excerpt: 'Who will win Super Bowl MVP? Breaking down the MVP odds for Seahawks vs Patriots with analysis and value picks.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '8 min',
@@ -381,8 +391,8 @@ export const superBowlGuides = [
   },
   {
     id: 'sb-5',
-    title: 'Best Super Bowl Betting Promos and Bonuses 2025',
-    slug: 'super-bowl-betting-promos-2025',
+    title: 'Best Super Bowl Betting Promos and Bonuses 2026',
+    slug: 'super-bowl-betting-promos-2026',
     excerpt: 'Claim over $5,000 in Super Bowl betting bonuses from DraftKings, FanDuel, BetMGM, and more. Exclusive promo codes inside.',
     category: 'Super Bowl',
     sport: 'NFL',
@@ -392,7 +402,7 @@ export const superBowlGuides = [
     id: 'sb-6',
     title: 'Super Bowl Over/Under: Total Points Prediction',
     slug: 'super-bowl-over-under-total',
-    excerpt: 'Should you bet the over or under in Super Bowl LIX? Analysis of the total and our expert prediction.',
+    excerpt: 'Should you bet the over or under in Super Bowl LX? Analysis of the total and our expert prediction.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '8 min',
@@ -401,25 +411,25 @@ export const superBowlGuides = [
     id: 'sb-7',
     title: 'Super Bowl Spread: Point Spread Analysis and Pick',
     slug: 'super-bowl-spread-analysis',
-    excerpt: 'Breaking down the Super Bowl spread between the Chiefs and Eagles with statistical analysis and our ATS pick.',
+    excerpt: 'Breaking down the Super Bowl spread between the Seahawks and Patriots with statistical analysis and our ATS pick.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '9 min',
   },
   {
     id: 'sb-8',
-    title: 'First Touchdown Scorer Odds: Super Bowl LIX',
+    title: 'First Touchdown Scorer Odds: Super Bowl LX',
     slug: 'super-bowl-first-touchdown-scorer',
-    excerpt: 'Who will score the first touchdown in Super Bowl LIX? Complete odds breakdown and our best bet.',
+    excerpt: 'Who will score the first touchdown in Super Bowl LX? Complete odds breakdown and our best bet.',
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '7 min',
   },
   {
     id: 'sb-9',
-    title: 'Super Bowl Halftime Show Props: Kendrick Lamar Bets',
+    title: 'Super Bowl Halftime Show Props: Bad Bunny Bets',
     slug: 'super-bowl-halftime-show-props',
-    excerpt: 'Bet on Kendrick Lamar\'s halftime performance! First song, guest appearances, and more prop bets.',
+    excerpt: "Bet on Bad Bunny's halftime performance! First song, guest appearances, and more prop bets.",
     category: 'Super Bowl',
     sport: 'NFL',
     readTime: '6 min',
@@ -437,65 +447,65 @@ export const superBowlGuides = [
 
 // Guide content for Super Bowl articles
 export const superBowlGuideContent: Record<string, { sections: { title: string; content: string }[] }> = {
-  'super-bowl-lix-odds-chiefs-eagles': {
+  'super-bowl-lx-odds-seahawks-patriots': {
     sections: [
       {
-        title: 'Super Bowl LIX Overview',
-        content: `Super Bowl LIX features a highly anticipated rematch between the Kansas City Chiefs and Philadelphia Eagles. The last time these teams met in Super Bowl LVII, the Chiefs won 38-35 in a thrilling contest.
+        title: 'Super Bowl LX Overview',
+        content: `Super Bowl LX features a compelling matchup between the Seattle Seahawks and New England Patriots. The Seahawks enter as favorites behind their dominant defense (ranked #1 in points allowed) and Sam Darnold's resurgent season.
 
 **Game Details:**
-- **Date:** February 9, 2025
+- **Date:** February 8, 2026
 - **Kickoff:** 6:30 PM ET
-- **Venue:** Caesars Superdome, New Orleans
+- **Venue:** Levi's Stadium, Santa Clara, CA
 - **Broadcast:** FOX
-- **Halftime Show:** Kendrick Lamar
+- **Halftime Show:** Bad Bunny
 
-The Chiefs are looking to become the first team to win three consecutive Super Bowls, while the Eagles are seeking revenge after that heartbreaking loss two years ago.`
+The Seahawks are looking for their second Super Bowl title in franchise history, while Mike Vrabel's Patriots are seeking to add to their NFL-record six championships.`
       },
       {
         title: 'Current Super Bowl Odds',
-        content: `**Point Spread:** Chiefs -1.5 (-110)
-The Chiefs are slight favorites, reflecting their championship pedigree. The tight spread indicates oddsmakers expect a closely contested game.
+        content: `**Point Spread:** Seahawks -5.5 (-110)
+The Seahawks are solid favorites, reflecting their dominant regular season (14-3) and elite defense.
 
 **Moneyline:**
-- Chiefs: -130
-- Eagles: +110
+- Seahawks: -228
+- Patriots: +190
 
-**Total (Over/Under):** 49.5
-This is slightly lower than Super Bowl LVII's total, but both offenses are capable of explosive performances.
+**Total (Over/Under):** 46.5
+A lower total reflecting Seattle's elite defense and the potential for a defensive battle.
 
 **Best Line Shopping:**
-- Best Chiefs spread: -1 at Bet365
-- Best Eagles ML: +110 at multiple books
-- Best total: Under 50 at BetMGM`
+- Best Seahawks spread: -5 at Bet365
+- Best Patriots ML: +190 at multiple books
+- Best total: Under 47 at BetMGM`
       },
       {
-        title: 'Chiefs vs Eagles Analysis',
-        content: `**Kansas City Chiefs:**
-Patrick Mahomes continues to be the most dangerous quarterback in football. Travis Kelce remains his security blanket, and the addition of rookie Xavier Worthy has added explosive speed. The Chiefs defense, led by Chris Jones, has been stout all postseason.
+        title: 'Seahawks vs Patriots Analysis',
+        content: `**Seattle Seahawks:**
+Sam Darnold has enjoyed a career renaissance in Seattle, leading the team to the #1 seed in the NFC. The defense, led by corners Devon Witherspoon and Riq Woolen, is the best in the league. Kenneth Walker III provides explosive rushing, while Cooper Kupp and Jaxon Smith-Njigba form an elite receiving duo.
 
-**Philadelphia Eagles:**
-The Eagles' rushing attack, headlined by Saquon Barkley, has been unstoppable. Jalen Hurts has matured as a passer while remaining a dual-threat weapon. The defense is among the league's best with Jalen Carter emerging as a star.
+**New England Patriots:**
+Mike Vrabel has rebuilt the Patriots quickly, with Drake Maye emerging as a franchise quarterback in his second year. Rhamondre Stevenson anchors the run game, while Stefon Diggs provides veteran leadership at receiver. The defense features Christian Gonzalez as a lockdown corner.
 
 **Key Matchup:**
-Chiefs passing game vs Eagles secondary. If Philadelphia can limit Mahomes' big plays, they control this game.`
+Seattle's passing attack vs New England's secondary. If the Patriots can contain Darnold, they have a chance.`
       },
       {
         title: 'Our Super Bowl Picks',
-        content: `**Spread Pick: Eagles +1.5 (-110)**
-The Eagles are the better team on paper with a more balanced attack. Getting points in what should be a close game is excellent value.
+        content: `**Spread Pick: Seahawks -5.5 (-110)**
+Seattle's defense is simply too good. The Patriots' path here has been easier, and they'll struggle against the league's best defense.
 
-**Total Pick: Over 49.5 (-110)**
-Both teams have explosive offenses and this is a revenge game for Philadelphia. Expect both teams to score 24+.
+**Total Pick: Under 46.5 (-110)**
+With Seattle's elite defense and the Patriots potentially struggling to move the ball, this could be a lower-scoring affair.
 
-**Best Bet: Eagles ML +110**
-We're taking the Eagles outright. Saquon Barkley is the X-factor, and the Eagles' defense can limit Mahomes just enough.
+**Best Bet: Seahawks ML -228**
+Lay the juice. The Seahawks are the more complete team and should control this game.
 
 *Bet responsibly. 21+ only.*`
       }
     ]
   },
-  'super-bowl-prop-bets-2025': {
+  'super-bowl-prop-bets-2026': {
     sections: [
       {
         title: 'Why Super Bowl Props Are Special',
@@ -511,36 +521,36 @@ We've analyzed over 50 prop bets and picked our favorites across every category.
       },
       {
         title: 'Best Player Props',
-        content: `**Patrick Mahomes Over 274.5 Passing Yards (-115)** ⭐ Best Bet
-Mahomes averages 300+ in big games. The Eagles secondary is good but he'll need to air it out to keep up with Philly's running game.
+        content: `**Sam Darnold Over 254.5 Passing Yards (-115)** ⭐ Best Bet
+Darnold has been excellent all season and should find opportunities against the Patriots secondary.
 
-**Saquon Barkley Over 119.5 Total Yards (-115)** ⭐ Best Bet
-Barkley has been unstoppable in the playoffs. He'll get 25+ carries and targets against a beatable Chiefs run defense.
+**Kenneth Walker III Over 89.5 Total Yards (-115)** ⭐ Best Bet
+Walker will get plenty of carries as Seattle tries to control the clock.
 
-**Travis Kelce Over 64.5 Receiving Yards (-110)**
-Kelce always shows up in big games. His chemistry with Mahomes is unmatched.
+**Jaxon Smith-Njigba Over 64.5 Receiving Yards (-110)**
+JSN has emerged as Darnold's favorite target and should see volume.
 
-**Jalen Hurts Over 39.5 Rushing Yards (-110)**
-Hurts has been running more in the playoffs. Expect designed runs and scrambles against KC.`
+**Drake Maye Over 239.5 Passing Yards (-110)**
+The Patriots may need to throw to keep up, giving Maye opportunities.`
       },
       {
         title: 'Best Game Props',
         content: `**First Score: Touchdown (-150)** ⭐ Best Bet
-Both offenses are explosive. Field goals to start are rare in modern Super Bowls.
+Both offenses are capable of explosive plays. Field goals to start are rare in modern Super Bowls.
 
 **Longest TD Over 44.5 Yards (-115)**
-With Xavier Worthy and A.J. Brown on the field, someone's breaking a long one.
+With JSN and Cooper Kupp's big-play ability, someone's breaking a long one.
 
 **Will There Be a Safety? Yes (+750)**
-A sprinkle bet worth taking. Safeties have happened in 9 of the last 25 Super Bowls.
+A sprinkle bet worth taking. Seattle's pass rush could pin the Patriots deep.
 
-**Either Team Scores 3 Unanswered TDs: Yes (+275)**
-In a back-and-forth game, momentum swings are likely.`
+**Winning Margin: Seahawks by 7-12 (+400)**
+A comfortable but not dominant win for Seattle seems most likely.`
       },
       {
         title: 'Fun Novelty Props',
-        content: `**Gatorade Shower Color: Orange (+350)**
-Chiefs are red, Eagles are green - orange splits the difference and is historically common.
+        content: `**Gatorade Shower Color: Green (+450)**
+Seattle's colors! If they win, green seems like the obvious choice.
 
 **Coin Toss: Heads (-105)**
 Pure 50/50, but if you're feeling lucky, tails has hit 5 of the last 7.
@@ -548,63 +558,64 @@ Pure 50/50, but if you're feeling lucky, tails has hit 5 of the last 7.
 **National Anthem Over 2:00 (-120)**
 Most performers go long. Take the over.
 
-**Kendrick Lamar First Song: Not Like Us (+350)**
-The hottest song of 2024 would be an incredible opener.
+**Bad Bunny First Song: Tití Me Preguntó (+350)**
+One of his biggest hits would be a crowd-pleasing opener.
 
 **First Commercial Category: Automotive (+250)**
 Car companies traditionally get the first spot after kickoff.`
       }
     ]
   },
-  'super-bowl-mvp-odds-2025': {
+  'super-bowl-mvp-odds-2026': {
     sections: [
       {
         title: 'Super Bowl MVP Betting Explained',
         content: `The Super Bowl MVP award goes to the most valuable player of the championship game. Historically, quarterbacks dominate this award, winning roughly 60% of the time.
 
 **Current MVP Odds:**
-1. Patrick Mahomes (KC) +175
-2. Jalen Hurts (PHI) +350
-3. Travis Kelce (KC) +900
-4. Saquon Barkley (PHI) +1000
-5. Isiah Pacheco (KC) +1600
+1. Sam Darnold (SEA) +150
+2. Drake Maye (NE) +375
+3. Kenneth Walker III (SEA) +900
+4. Jaxon Smith-Njigba (SEA) +1200
+5. Cooper Kupp (SEA) +1400
 
-**Key Insight:** The winning team's QB wins MVP about 75% of the time. Non-QBs need truly dominant performances.`
+**Key Insight:** The winning team's QB wins MVP about 75% of the time. With the Seahawks as heavy favorites, Darnold is the logical favorite.`
       },
       {
         title: 'Quarterback Analysis',
-        content: `**Patrick Mahomes (+175)**
-The favorite for good reason. He's a two-time Super Bowl MVP and consistently delivers in big moments. If the Chiefs win, he's the overwhelming favorite.
+        content: `**Sam Darnold (+150)**
+The favorite for good reason. If Seattle wins as expected, Darnold will likely be the catalyst. He's had a career-defining season and this would be the ultimate redemption story.
 
-**Jalen Hurts (+350)**
-At +350, Hurts offers better value. If the Eagles win, he'll likely get the nod unless Barkley has 200+ total yards. Hurts can win it with 3 passing TDs or a combination of passing and rushing scores.
+**Drake Maye (+375)**
+At +375, Maye offers value if you believe the Patriots can pull the upset. As a second-year QB with immense talent, a Super Bowl MVP would cement his status as a franchise cornerstone.
 
-**Our Pick: Jalen Hurts +350** ⭐
-Better odds than Mahomes with similar win probability. The value is on the Eagles side.`
+**Our Pick: Sam Darnold +150** ⭐
+The short odds are justified. In a Seattle win, Darnold is the overwhelming favorite.`
       },
       {
         title: 'Non-QB Value Plays',
-        content: `**Saquon Barkley (+1000)** ⭐ Best Long Shot
-If Barkley runs for 150+ yards and 2 TDs in an Eagles win, he could steal MVP. He's been the engine of this offense all season.
+        content: `**Kenneth Walker III (+900)** ⭐ Best Long Shot
+If Walker dominates on the ground with 150+ yards and multiple TDs, he could steal MVP. Seattle may try to control the game through the run.
 
-**Travis Kelce (+900)**
-If Kelce catches 10+ balls for 120+ yards and the Chiefs win close, he could get the nod. Voters love narratives.
+**Devon Witherspoon (+2500)**
+A defensive MVP is rare but possible. If Witherspoon has multiple picks or a pick-six, he's in the conversation.
 
-**Chris Jones (+4000)**
-A true long shot, but if Jones has 3+ sacks and a forced fumble in a defensive battle, history could be made.`
+**Jaxon Smith-Njigba (+1200)**
+If JSN goes off for 150+ yards and 2 TDs, he could get the nod over Darnold.`
       },
       {
         title: 'MVP Betting Strategy',
-        content: `**Best Value Bet: Jalen Hurts +350**
-You're essentially betting on the Eagles to win at better odds than their moneyline.
+        content: `**Best Value Bet: Kenneth Walker III +900**
+If Seattle wins big with a dominant rushing performance, Walker is your guy.
 
-**Sprinkle Bet: Saquon Barkley +1000**
-If the Eagles win big with Barkley dominating, this pays off nicely.
+**Safe Bet: Sam Darnold +150**
+You're essentially betting on Seattle to win. Not exciting odds but most likely outcome.
 
-**Avoid: Patrick Mahomes +175**
-The odds are too short. You're laying -175 juice essentially betting on a Chiefs win.
+**Sprinkle Bet: Devon Witherspoon +2500**
+Seattle's defense is elite. A defensive player winning isn't impossible.
 
-**Pro Tip:** Wait until closer to kickoff. If money comes in on one side, the other side's odds improve.`
+**Avoid: Drake Maye +375**
+The odds imply Patriots need to win, but they're +190 underdogs. The value isn't there.`
       }
     ]
   },
@@ -658,23 +669,23 @@ Buy early before numbers are assigned - it's pure luck at that point. If numbers
 Many sites let you run free Super Bowl squares pools online, handling the randomization and tracking automatically.`
       },
       {
-        title: 'Super Bowl LIX Squares Analysis',
+        title: 'Super Bowl LX Squares Analysis',
         content: `**Most Likely Final Scores (last digits):**
-- Chiefs 7, Eagles 4 (27-24, 34-21, etc.)
-- Chiefs 0, Eagles 7 (30-27, 27-24)
-- Chiefs 4, Eagles 7 (24-27, 31-27)
+- Seahawks 7, Patriots 0 (27-20, 24-10, etc.)
+- Seahawks 4, Patriots 7 (24-17, 31-27)
+- Seahawks 0, Patriots 3 (30-23, 27-13)
 
 **Historical Super Bowl Trends:**
 - Q1 most common: 0-0, 7-0, 0-7
 - Halftime most common: 0-7, 7-0, 7-7
 - Final most common: 4-7, 7-4, 0-7
 
-**Best Squares for Chiefs vs Eagles:**
-Given the expected scoring, target squares ending in 0, 4, and 7 for both teams.`
+**Best Squares for Seahawks vs Patriots:**
+Given Seattle's defense and expected lower scoring, target squares ending in 0, 3, and 7 for both teams.`
       }
     ]
   },
-  'super-bowl-betting-promos-2025': {
+  'super-bowl-betting-promos-2026': {
     sections: [
       {
         title: 'Best Super Bowl Sportsbook Bonuses',
@@ -757,71 +768,69 @@ Some books exclude odds boosts and pre-built parlays. Check specific terms.`
   'super-bowl-over-under-total': {
     sections: [
       {
-        title: 'Super Bowl LIX Total Analysis',
-        content: `The over/under for Super Bowl LIX is set at **49.5 points** across most sportsbooks.
+        title: 'Super Bowl LX Total Analysis',
+        content: `The over/under for Super Bowl LX is set at **46.5 points** across most sportsbooks.
 
 **Line Movement:**
 - Opening line: 48
-- Current line: 49.5
-- Peaked at: 50.5
+- Current line: 46.5
+- Dropped from: 47.5
 
-The total has moved up as sharp money came in on the over, respecting both offenses' firepower.
+The total has moved down as sharp money came in on the under, respecting Seattle's elite defense.
 
 **Historical Context:**
-- Super Bowl LVII (Chiefs vs Eagles): 73 total points
+- Super Bowl LIX (Eagles vs Chiefs): 62 total points (40-22)
 - Last 10 Super Bowls average: 51.2 points
-- Super Bowls with repeat matchups tend to be higher scoring`
+- Games featuring #1 defenses tend to go under`
       },
       {
         title: 'Case for the Over',
         content: `**Why the Over Hits:**
 
 1. **Offensive Firepower**
-Both teams feature elite offenses. The Chiefs have Mahomes and Kelce; the Eagles have Hurts, Barkley, and elite receivers.
+Seattle has multiple weapons: Kupp, JSN, Walker. The Patriots offense has also been productive.
 
-2. **Championship Game Scores**
-- Chiefs scored 32 in the AFC Championship
-- Eagles scored 55 in the NFC Championship
-Combined: 87 points in their conference title games.
+2. **Super Bowl Scoring Trends**
+Recent Super Bowls have trended higher. Last year hit 62 total.
 
-3. **Revenge Factor**
-The Eagles remember losing 38-35. Expect them to try matching the Chiefs score for score.
+3. **Bad Bunny Effect**
+The halftime show gives offenses extra rest, often leading to higher-scoring second halves.
 
-4. **Dome Environment**
-The Superdome's indoor setting benefits passing games and consistent kicking.`
+4. **Dome-Like Conditions**
+Levi's Stadium has an open-air design but the Bay Area in February is mild.`
       },
       {
         title: 'Case for the Under',
         content: `**Why the Under Hits:**
 
-1. **Elite Defenses**
-Both defenses are top-10 units. Chris Jones can wreck game plans; the Eagles front four is dominant.
+1. **Seattle's Elite Defense**
+The #1 scoring defense in the NFL. They've held teams under 20 points regularly.
 
-2. **Playoff Defense Typically Improves**
-Defensive coordinators have two weeks to prepare. Expect tighter coverage and better schemes.
+2. **Mike Vrabel's Coaching**
+Vrabel is a defensive-minded coach. Expect a conservative game plan to keep it close.
 
-3. **High-Stakes Caution**
-Teams sometimes play conservative early, leading to lower first-half scoring.
+3. **Patriots' Offensive Limitations**
+Without elite weapons, the Patriots may struggle to score on Seattle's defense.
 
-4. **Public on Over**
-70% of bets are on the over. Sharp money sometimes fades the public.`
+4. **Sharp Money on Under**
+The line has moved from 48 to 46.5. Sharps are betting the under.`
       },
       {
         title: 'Our Total Prediction',
-        content: `**Pick: OVER 49.5 (-110)** ⭐
+        content: `**Pick: UNDER 46.5 (-110)** ⭐
 
-**Predicted Score: Chiefs 31, Eagles 28 (59 total)**
+**Predicted Score: Seahawks 27, Patriots 17 (44 total)**
 
-The last meeting produced 73 points, and both offenses have arguably improved. While defenses are good, we expect a shootout similar to Super Bowl LVII.
+Seattle's defense is too good. The Patriots will struggle to move the ball consistently, and even Seattle's offense may face some resistance from a motivated New England D.
 
 **Best Bet:**
-- DraftKings Over 49.5 (-110)
-- Alternate: Over 52.5 (+130) for better value
+- FanDuel Under 46.5 (-110)
+- Alternate: Under 43.5 (+130) for better value
 
 **Key Factors:**
-- Mahomes in big games: Usually exceeds expectations
-- Barkley factor: Guaranteed 20+ touches
-- Red zone efficiency: Both teams elite at finishing drives`
+- #1 defense in the league
+- Vrabel's defensive background
+- Lower-scoring playoff games this year`
       }
     ]
   },
@@ -829,70 +838,70 @@ The last meeting produced 73 points, and both offenses have arguably improved. W
     sections: [
       {
         title: 'Super Bowl Spread Breakdown',
-        content: `**Current Spread:** Chiefs -1.5 (-110)
+        content: `**Current Spread:** Seahawks -5.5 (-110)
 
-The Chiefs opened as 1-point favorites and have moved to -1.5. This is one of the tightest Super Bowl spreads in recent memory.
+The Seahawks opened as 4-point favorites and have moved to -5.5. This reflects their dominance this season.
 
 **What the Spread Tells Us:**
-- Oddsmakers see this as essentially a pick 'em game
-- The Chiefs' championship experience earns them the slight edge
-- Sharp money is split, keeping the line tight
+- Oddsmakers see Seattle as clearly superior
+- New England's easy path to the Super Bowl is a concern
+- The market expects a comfortable Seattle win
 
 **Key Numbers:**
-- 3 is the most common margin of victory in NFL
-- 1.5 means Chiefs need to win by 2+ to cover
-- A 1-point Chiefs win means Eagles backers win`
+- 3 and 7 are the most common margins of victory in NFL
+- 5.5 means Seahawks need to win by 6+ to cover
+- A 5-point Seattle win means Patriots backers win`
       },
       {
-        title: 'Chiefs -1.5 Analysis',
-        content: `**Why the Chiefs Cover:**
+        title: 'Seahawks -5.5 Analysis',
+        content: `**Why the Seahawks Cover:**
 
-1. **Patrick Mahomes Factor**
-Mahomes is 4-2 ATS in Super Bowls and championship games. He elevates his game.
+1. **Elite Defense**
+Seattle allowed just 17.2 points per game (best in NFL). The Patriots will struggle.
 
-2. **Championship Experience**
-The Chiefs have been here before. They know how to handle the moment.
+2. **Sam Darnold's Resurgence**
+Darnold has been the most improved player in the league. He won't shrink in the moment.
 
-3. **Andy Reid Preparation**
-With two weeks to prepare, Reid's offense finds new wrinkles. He's 8-4 ATS with extra prep time.
+3. **Home Field Advantage**
+Levi's Stadium is a neutral site, but it's closer to Seattle. Expect a pro-Seahawks crowd.
 
-4. **Fourth Quarter Execution**
-Mahomes is historically clutch. If the game is close, bet on #15.`
+4. **Mike Macdonald's Scheming**
+Seattle's defensive coordinator turned head coach has outcoached opponents all year.`
       },
       {
-        title: 'Eagles +1.5 Analysis',
-        content: `**Why the Eagles Cover:**
+        title: 'Patriots +5.5 Analysis',
+        content: `**Why the Patriots Cover:**
 
-1. **Better Roster Top to Bottom**
-On paper, the Eagles are the more talented team. More Pro Bowlers, better depth.
+1. **Mike Vrabel Factor**
+Vrabel is a championship-caliber coach. He'll have a solid game plan.
 
-2. **Saquon Barkley Difference**
-KC's run defense is vulnerable. Barkley should feast with 25+ carries.
+2. **Drake Maye's Ceiling**
+Maye has shown flashes of elite play. A big-game performance could keep it close.
 
-3. **Revenge Motivation**
-The Eagles have been thinking about Super Bowl LVII for two years. That chip burns.
+3. **Historical Trends**
+Underdogs of 5+ points have covered 57% of the time in recent Super Bowls.
 
-4. **Getting Points**
-In a game this close, getting any points is valuable. Eagles just need to keep it within 1.`
+4. **Respect the Points**
+Getting nearly a touchdown is valuable in any game, especially the Super Bowl.`
       },
       {
         title: 'Our Spread Pick',
-        content: `**Pick: EAGLES +1.5 (-110)** ⭐
+        content: `**Pick: SEAHAWKS -5.5 (-110)** ⭐
 
 **Reasoning:**
-We believe the Eagles are the better team in 2025. Getting points in what should be a 1-3 point game is tremendous value.
+Seattle is simply the better team. Their defense will suffocate the Patriots offense, and the Seahawks have the offensive weapons to pull away.
 
 **Confidence Level:** ⭐⭐⭐⭐ (4/5)
 
 **Alternative Plays:**
-- Eagles ML +110 (if you believe they win outright)
-- Eagles +2.5 (alternate line, -150)
-- Eagles 1H +0.5 (they'll start fast)
+- Seahawks ML -228 (if you want less stress)
+- Seahawks -3.5 (alternate line, -180)
+- Seahawks 1H -2.5 (they'll start fast)
 
 **Bet Placement:**
-Best line for Eagles +1.5 is at FanDuel (-112) or DraftKings (-110).
+Best line for Seahawks -5.5 is at FanDuel (-108) or DraftKings (-110).
 
-*Remember: The team with the better running game usually wins. That's the Eagles.*`
+*Remember: The best defense usually wins in the Super Bowl. That's the Seahawks.*`
       }
     ]
   },
@@ -903,11 +912,11 @@ Best line for Eagles +1.5 is at FanDuel (-112) or DraftKings (-110).
         content: `First touchdown scorer is one of the most popular Super Bowl props. You're betting on which player will score the first touchdown of the game.
 
 **Current Favorites:**
-1. Saquon Barkley (PHI) +550
-2. Travis Kelce (KC) +700
-3. Isiah Pacheco (KC) +800
-4. A.J. Brown (PHI) +900
-5. DeVonta Smith (PHI) +1000
+1. Kenneth Walker III (SEA) +500
+2. Rhamondre Stevenson (NE) +650
+3. Jaxon Smith-Njigba (SEA) +900
+4. Cooper Kupp (SEA) +950
+5. TreVeyon Henderson (NE) +1000
 
 **Key Stats:**
 - Running backs score first about 40% of the time
@@ -918,42 +927,42 @@ Best line for Eagles +1.5 is at FanDuel (-112) or DraftKings (-110).
       },
       {
         title: 'Top First TD Scorer Picks',
-        content: `**Saquon Barkley +550** ⭐ Best Bet
-Barkley gets the ball early and often. If the Eagles script a goal-line run on their first drive, he's the lock.
+        content: `**Kenneth Walker III +500** ⭐ Best Bet
+Walker is explosive and Seattle may script a goal-line run early. Great value at this price.
 
-**Travis Kelce +700**
-Kelce is Mahomes' favorite red zone target. Historic big-game performer with 17 playoff TDs.
+**Rhamondre Stevenson +650**
+If the Patriots get inside the 5, Stevenson is their guy. Solid value.
 
-**A.J. Brown +900** 
-Brown has scored the first TD in 3 Eagles playoff games. He's due.
+**Jaxon Smith-Njigba +900** 
+JSN has big-play ability. A long TD reception early is possible.
 
-**Xavier Worthy +1100**
-Deep threat could break a long TD on an early shot play. High risk, high reward.`
+**Cooper Kupp +950**
+Kupp is a red zone monster. If Seattle drives deep, he's a threat.`
       },
       {
         title: 'Long Shot First TD Picks',
-        content: `**Jalen Hurts +1400**
-Hurts has 15 rushing TDs this season. Eagles love the QB sneak in the red zone.
+        content: `**Sam Darnold +1400**
+Darnold has some rushing TDs this season. A QB sneak inside the 1 is possible.
 
-**Dallas Goedert +1200**
-Sneaky pick. Goedert gets forgotten in the red zone but has TD upside.
+**Hunter Henry +1200**
+Sneaky pick. TEs in the red zone can slip open in big games.
 
-**Hollywood Brown +1500**
-If he's healthy, Hollywood runs routes that spring free early.
+**Drake Maye +1800**
+If Maye scrambles in for a TD, it would be a memorable moment.
 
 **Any Defensive Player +2500**
-Pick-six or fumble return? It happens. Fun sprinkle bet.`
+Pick-six or fumble return? Seattle's defense is capable. Fun sprinkle bet.`
       },
       {
         title: 'First TD Strategy',
         content: `**Betting Strategy:**
 
-**Single Bet:** Saquon Barkley +550
+**Single Bet:** Kenneth Walker III +500
 Highest probability play. Running backs dominate this prop.
 
 **Two-Player Strategy:**
-- Saquon Barkley +550
-- Travis Kelce +700
+- Kenneth Walker III +500
+- Rhamondre Stevenson +650
 Combined probability covers ~35% of outcomes.
 
 **Spread the Risk:**
@@ -972,60 +981,60 @@ DraftKings and FanDuel offer the most player options and best odds.`
   'super-bowl-halftime-show-props': {
     sections: [
       {
-        title: 'Kendrick Lamar Halftime Show',
-        content: `Kendrick Lamar headlines Super Bowl LIX's halftime show, promising an unforgettable performance. Sportsbooks are offering dozens of props on his set.
+        title: 'Bad Bunny Halftime Show',
+        content: `Bad Bunny headlines Super Bowl LX's halftime show, promising an unforgettable Latin music performance. Sportsbooks are offering dozens of props on his set.
 
 **Performance Details:**
-- Artist: Kendrick Lamar
+- Artist: Bad Bunny
 - Duration: ~13 minutes
-- Location: Caesars Superdome, New Orleans
+- Location: Levi's Stadium, Santa Clara, CA
 
 **Top Song Predictions:**
-1. "Not Like Us" 
-2. "HUMBLE."
-3. "DNA."
-4. "Money Trees"
-5. "Swimming Pools"
+1. "Tití Me Preguntó"
+2. "Dakiti"
+3. "Me Porto Bonito"
+4. "Ojitos Lindos"
+5. "Monaco"
 
-His 2024 feud with Drake makes "Not Like Us" a near-lock to be featured prominently.`
+As the first solo Latin artist to headline the Super Bowl halftime show, Bad Bunny has promised a culturally significant performance.`
       },
       {
         title: 'Best Halftime Props',
-        content: `**Kendrick First Song: "Not Like Us" (+350)**
-The song of the year deserves to open the biggest show. Plus, the Drake dis will have the crowd electric.
+        content: `**Bad Bunny First Song: "Tití Me Preguntó" (+350)**
+One of his biggest hits would be a crowd-pleasing opener that gets everyone moving.
 
-**Number of Songs Performed: Over 6.5 (-130)**
-Kendrick has a deep catalog and typically mixes songs in medley format. Expect 7-9 tracks.
+**Number of Songs Performed: Over 7.5 (-130)**
+Bad Bunny has a massive catalog and typically mixes songs in medley format. Expect 8-10 tracks.
 
-**Will Kendrick Bring Out a Guest? Yes (-150)**
-Possible guests: SZA, Dr. Dre, Baby Keem, or a surprise. He loves spectacle.
+**Will Bad Bunny Bring Out a Guest? Yes (-200)**
+Possible guests: Daddy Yankee, J Balvin, Peso Pluma, or a surprise. He loves spectacle.
 
-**Will Drake Be Mentioned? No (-500) / Yes (+350)**
-He won't say Drake's name, but "Not Like Us" is basically the mention.`
+**Will There Be Spanish Lyrics? Yes (-1000)**
+Obviously. But some books still offer this.`
       },
       {
         title: 'Fun Halftime Props',
-        content: `**Kendrick Outfit Color: Black (+200)**
-He typically performs in dark, neutral colors. Black is the safe bet.
+        content: `**Bad Bunny Outfit Color: White (+200)**
+He often performs in white or neutral colors. White for the big stage seems likely.
 
-**Will He Remove His Shirt? No (-400)**
-Kendrick isn't a shirt-off performer. Save this bet for a pop star.
+**Will He Remove His Shirt? No (-300)**
+Bad Bunny isn't typically a shirt-off performer.
 
-**Fireworks During Performance: Yes (-300)**
+**Fireworks During Performance: Yes (-400)**
 Super Bowl halftime shows ALWAYS have pyro.
 
-**Will He Use Live Instruments? Yes (-180)**
-Kendrick has used live bands before. Expect drums and possibly strings.
+**Will He Use Live Instruments? Yes (-250)**
+Bad Bunny has used live bands before. Expect drums and possibly brass.
 
 **Standing Ovation Length: Over 15 seconds (-120)**
-The crowd will be on their feet. Kendrick commands respect.`
+The crowd will be on their feet. Bad Bunny commands attention.`
       },
       {
         title: 'Halftime Betting Strategy',
         content: `**Best Bets:**
-1. Over 6.5 songs at -130 ⭐
-2. Guest appearance: Yes at -150
-3. First song: Not Like Us at +350 (value play)
+1. Over 7.5 songs at -130 ⭐
+2. Guest appearance: Yes at -200
+3. First song: Tití Me Preguntó at +350 (value play)
 
 **Avoid:**
 - Exact song order props (too unpredictable)
@@ -1044,19 +1053,19 @@ DraftKings and BetMGM have the most halftime props. FanDuel has fewer options bu
     sections: [
       {
         title: 'Super Bowl Commercial Betting',
-        content: `Super Bowl commercials are a $7 million per 30-second spectacle. Sportsbooks now offer props on the ads themselves!
+        content: `Super Bowl commercials are a $7-8 million per 30-second spectacle. Sportsbooks now offer props on the ads themselves!
 
-**2025 Commercial Landscape:**
-- 30-second spot: ~$7-8 million
+**2026 Commercial Landscape:**
+- 30-second spot: ~$8 million
 - Total ad time: ~50 minutes
 - Most expensive ads in TV history
 
-**Confirmed Advertisers:**
+**Likely Advertisers:**
 - Budweiser (Clydesdales are back!)
 - Doritos
 - Uber Eats
 - Various car manufacturers
-- Multiple streaming services
+- Streaming services
 
 **Betting Markets:**
 - First commercial category
@@ -1072,8 +1081,8 @@ Historically the most common. Chips, beer, soda, and snacks dominate Super Bowl 
 **First Commercial: Automotive (+250)**
 Car companies love the prestige of the first spot. Expect a truck or luxury brand.
 
-**Will a Crypto Ad Air? No (-300)**
-After the 2022 crypto crash, these companies are out. No more Matt Damon "Fortune favors the brave."
+**Will a Crypto Ad Air? No (-400)**
+After the 2022 crypto crash, these companies are mostly out.
 
 **Celebrity in Budweiser Ad: Yes (+150)**
 The Clydesdales usually fly solo, but celebrity cameos are increasingly common.`
@@ -1091,13 +1100,11 @@ Pure coin flip. Tails has hit 5 of the last 7.
 Singers almost always go long. Take the over.
 
 **Gatorade Shower Color:**
+- Green (+450) - Seattle's color!
 - Orange (+350)
 - Blue (+400)
-- Yellow (+450)
 - Clear/Water (+500)
-- Red (+600)
-- Green (+800)
-Orange and blue are historically most common.
+Green would be poetic for a Seahawks win.
 
 **Will Someone Propose on Camera? No (-800)**
 Happens occasionally but odds are steep for a reason.`

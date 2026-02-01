@@ -47,12 +47,12 @@ export default function GuidesPage() {
             <div className="bg-gradient-to-r from-red-500/20 via-red-500/10 to-transparent border border-red-500/30 rounded-xl p-8">
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
                 <div>
-                  <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-2">
-                    🏈 Super Bowl LIX — Feb 9, 2025
+                  <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 mb-2">
+                    🏈 Super Bowl LX — Feb 8, 2026
                   </Badge>
                   <h2 className="text-2xl font-bold text-white mb-2">Super Bowl Betting Guides</h2>
                   <p className="text-zinc-400 max-w-xl">
-                    Chiefs vs Eagles complete betting coverage. Odds, props, promos, and expert picks.
+                    Seahawks vs Patriots complete betting coverage. Odds, props, promos, and expert picks.
                   </p>
                 </div>
                 <Link href="/super-bowl">

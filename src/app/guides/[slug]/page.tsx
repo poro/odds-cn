@@ -282,7 +282,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
                       : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
             }`}
           >
-            {guide.category === 'Super Bowl' ? '🏈 Super Bowl LIX' : guide.category}
+            {guide.category === 'Super Bowl' ? '🏈 Super Bowl LX' : guide.category}
           </Badge>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {guide.title}
@@ -395,10 +395,10 @@ export default async function GuidePage({ params }: GuidePageProps) {
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold text-white mb-3">🏈 Super Bowl Hub</h3>
                   <p className="text-sm text-zinc-400 mb-4">
-                    Get all Super Bowl LIX odds, props, and promos in one place.
+                    Get all Super Bowl LX odds, props, and promos in one place.
                   </p>
                   <Link href="/super-bowl">
-                    <Button className="w-full bg-red-500 hover:bg-red-600">
+                    <Button className="w-full bg-blue-500 hover:bg-blue-600">
                       View Super Bowl Hub →
                     </Button>
                   </Link>

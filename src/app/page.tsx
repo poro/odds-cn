@@ -23,16 +23,16 @@ export default function Home() {
       <LiveScoresTicker />
 
       {/* Super Bowl Banner */}
-      <section className="bg-gradient-to-r from-red-950 via-zinc-900 to-green-950 border-b border-red-500/30">
+      <section className="bg-gradient-to-r from-blue-950 via-zinc-900 to-red-950 border-b border-blue-500/30">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <Badge className="bg-red-500/20 text-red-400 border-red-500/30 animate-pulse">
-                🏈 SUPER BOWL LIX
+              <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 animate-pulse">
+                🏈 SUPER BOWL LX
               </Badge>
               <div className="text-center md:text-left">
                 <h2 className="text-xl md:text-2xl font-bold text-white">
-                  <span className="text-red-400">Chiefs</span> vs <span className="text-green-400">Eagles</span>
+                  <span className="text-blue-400">Seahawks</span> vs <span className="text-red-400">Patriots</span>
                 </h2>
                 <p className="text-sm text-zinc-400">{superBowlInfo.kickoff} • {superBowlInfo.venue}</p>
               </div>
@@ -105,25 +105,25 @@ export default function Home() {
           {/* Sidebar */}
           <aside className="space-y-6">
             {/* Super Bowl Promo */}
-            <div className="bg-gradient-to-br from-red-500/20 to-red-600/10 border border-red-500/30 rounded-xl p-6">
-              <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-3">
-                🏈 Super Bowl LIX
+            <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/30 rounded-xl p-6">
+              <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 mb-3">
+                🏈 Super Bowl LX
               </Badge>
-              <h3 className="text-lg font-bold text-white mb-2">Chiefs vs Eagles</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Seahawks vs Patriots</h3>
               <p className="text-sm text-zinc-400 mb-4">Get $5,000+ in bonuses for the big game. Best odds, props & picks.</p>
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="bg-zinc-900/50 rounded-lg p-2 text-center">
-                  <div className="text-xs text-zinc-500">KC Spread</div>
-                  <div className="font-bold text-red-400">-1.5</div>
+                  <div className="text-xs text-zinc-500">SEA Spread</div>
+                  <div className="font-bold text-blue-400">-4.5</div>
                 </div>
                 <div className="bg-zinc-900/50 rounded-lg p-2 text-center">
-                  <div className="text-xs text-zinc-500">PHI Spread</div>
-                  <div className="font-bold text-green-400">+1.5</div>
+                  <div className="text-xs text-zinc-500">NE Spread</div>
+                  <div className="font-bold text-red-400">+4.5</div>
                 </div>
               </div>
               <Link
                 href="/super-bowl"
-                className="block w-full text-center py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-colors"
+                className="block w-full text-center py-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors"
               >
                 View Super Bowl Odds →
               </Link>

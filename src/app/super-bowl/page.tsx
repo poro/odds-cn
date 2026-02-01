@@ -15,11 +15,11 @@ import type { Metadata } from 'next';
 import { SuperBowlCountdown } from '@/components/super-bowl-countdown';
 
 export const metadata: Metadata = {
-  title: 'Super Bowl LIX Odds 2025 - Chiefs vs Eagles Betting Lines, Props & Promos | Odds.cn',
-  description: 'Get the best Super Bowl LIX odds, betting lines, props, and exclusive promos. Chiefs vs Eagles complete betting guide with over $5,000 in sportsbook bonuses.',
-  keywords: 'super bowl odds, super bowl betting, super bowl props, chiefs vs eagles, super bowl 2025, super bowl promos, super bowl mvp odds',
+  title: 'Super Bowl LX Odds 2026 - Seahawks vs Patriots Betting Lines, Props & Promos | Odds.cn',
+  description: 'Get the best Super Bowl LX odds, betting lines, props, and exclusive promos. Seahawks vs Patriots complete betting guide with over $5,000 in sportsbook bonuses.',
+  keywords: 'super bowl odds, super bowl betting, super bowl props, seahawks vs patriots, super bowl 2026, super bowl promos, super bowl mvp odds',
   openGraph: {
-    title: 'Super Bowl LIX Odds - Chiefs vs Eagles 2025',
+    title: 'Super Bowl LX Odds - Seahawks vs Patriots 2026',
     description: 'Live Super Bowl odds, props, and $5,000+ in betting bonuses',
     type: 'website',
   },
@@ -31,18 +31,18 @@ export default function SuperBowlPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-red-950 via-zinc-900 to-zinc-950 border-b border-red-500/30 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-blue-950 via-zinc-900 to-zinc-950 border-b border-blue-500/30 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent" />
         
         <div className="max-w-7xl mx-auto px-4 py-12 relative z-10">
           <div className="text-center mb-8">
-            <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-4 animate-pulse">
-              🏈 SUPER BOWL LIX — {superBowlInfo.date.split('T')[0]}
+            <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 mb-4 animate-pulse">
+              🏈 SUPER BOWL LX — {superBowlInfo.date.split('T')[0]}
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              <span className="text-red-500">Chiefs</span> vs <span className="text-green-500">Eagles</span>
+              <span className="text-blue-400">Seahawks</span> vs <span className="text-red-500">Patriots</span>
             </h1>
             <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-2">
               {superBowlInfo.venue} • {superBowlInfo.city}
@@ -50,28 +50,31 @@ export default function SuperBowlPage() {
             <p className="text-lg text-zinc-500">
               {superBowlInfo.kickoff} • {superBowlInfo.broadcaster} • Halftime: {superBowlInfo.halftimeShow}
             </p>
+            <p className="text-md text-zinc-600 mt-1">
+              National Anthem: {superBowlInfo.nationalAnthem}
+            </p>
           </div>
 
           {/* Countdown Timer */}
           <SuperBowlCountdown targetDate={superBowlInfo.date} />
 
-          {/* Quick Odds Display */}
+          {/* Quick Odds Display - Using first sportsbook as reference */}
           <div className="max-w-3xl mx-auto mt-8">
             <div className="grid grid-cols-3 gap-4 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-2xl p-6">
               <div className="text-center">
                 <div className="text-sm text-zinc-500 uppercase mb-1">Spread</div>
-                <div className="text-2xl font-bold text-white">KC -1.5</div>
-                <div className="text-sm text-zinc-400">PHI +1.5</div>
+                <div className="text-2xl font-bold text-white">SEA {superBowlOdds[0]?.seahawksSpread}</div>
+                <div className="text-sm text-zinc-400">NE {superBowlOdds[0]?.patriotsSpread}</div>
               </div>
               <div className="text-center border-x border-zinc-800">
                 <div className="text-sm text-zinc-500 uppercase mb-1">Total</div>
-                <div className="text-2xl font-bold text-white">O/U 49.5</div>
+                <div className="text-2xl font-bold text-white">O/U {superBowlOdds[0]?.total}</div>
                 <div className="text-sm text-zinc-400">-110 both sides</div>
               </div>
               <div className="text-center">
                 <div className="text-sm text-zinc-500 uppercase mb-1">Moneyline</div>
-                <div className="text-2xl font-bold text-red-400">KC -130</div>
-                <div className="text-sm text-green-400">PHI +110</div>
+                <div className="text-2xl font-bold text-blue-400">SEA {superBowlOdds[0]?.seahawksML}</div>
+                <div className="text-sm text-red-400">NE +{superBowlOdds[0]?.patriotsML}</div>
               </div>
             </div>
           </div>
@@ -113,10 +116,10 @@ export default function SuperBowlPage() {
                     <thead className="bg-zinc-800">
                       <tr>
                         <th className="text-left px-4 py-3 text-sm font-semibold text-zinc-300">Sportsbook</th>
-                        <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">Chiefs Spread</th>
-                        <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">Eagles Spread</th>
-                        <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">KC ML</th>
-                        <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">PHI ML</th>
+                        <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">Seahawks Spread</th>
+                        <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">Patriots Spread</th>
+                        <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">SEA ML</th>
+                        <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">NE ML</th>
                         <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300">Total</th>
                         <th className="text-center px-4 py-3 text-sm font-semibold text-zinc-300"></th>
                       </tr>
@@ -131,15 +134,15 @@ export default function SuperBowlPage() {
                             )}
                           </td>
                           <td className="px-4 py-3 text-center">
-                            <span className="text-white">{odds.chiefsSpread}</span>
-                            <span className="text-zinc-400 text-sm ml-1">({odds.chiefsSpreadOdds})</span>
+                            <span className="text-white">{odds.seahawksSpread}</span>
+                            <span className="text-zinc-400 text-sm ml-1">({odds.seahawksSpreadOdds})</span>
                           </td>
                           <td className="px-4 py-3 text-center">
-                            <span className="text-white">{odds.eaglesSpread}</span>
-                            <span className="text-zinc-400 text-sm ml-1">({odds.eaglesSpreadOdds})</span>
+                            <span className="text-white">{odds.patriotsSpread}</span>
+                            <span className="text-zinc-400 text-sm ml-1">({odds.patriotsSpreadOdds})</span>
                           </td>
-                          <td className="px-4 py-3 text-center text-red-400 font-medium">{odds.chiefsML}</td>
-                          <td className="px-4 py-3 text-center text-green-400 font-medium">+{odds.eaglesML}</td>
+                          <td className="px-4 py-3 text-center text-blue-400 font-medium">{odds.seahawksML}</td>
+                          <td className="px-4 py-3 text-center text-red-400 font-medium">+{odds.patriotsML}</td>
                           <td className="px-4 py-3 text-center text-white">{odds.total}</td>
                           <td className="px-4 py-3 text-center">
                             <a 
@@ -165,22 +168,22 @@ export default function SuperBowlPage() {
                 🎯 Our Super Bowl Picks
               </h2>
               <div className="grid md:grid-cols-3 gap-4">
-                <Card className="bg-gradient-to-br from-green-500/20 to-green-600/10 border-green-500/30">
-                  <CardContent className="p-6 text-center">
-                    <Badge className="bg-green-500/20 text-green-400 border-green-500/30 mb-3">
-                      Spread Pick
-                    </Badge>
-                    <div className="text-2xl font-bold text-white mb-2">Eagles +1.5</div>
-                    <p className="text-sm text-zinc-400">Better team, getting points</p>
-                  </CardContent>
-                </Card>
                 <Card className="bg-gradient-to-br from-blue-500/20 to-blue-600/10 border-blue-500/30">
                   <CardContent className="p-6 text-center">
                     <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 mb-3">
+                      Spread Pick
+                    </Badge>
+                    <div className="text-2xl font-bold text-white mb-2">Seahawks -4.5</div>
+                    <p className="text-sm text-zinc-400">Seattle pulls away late</p>
+                  </CardContent>
+                </Card>
+                <Card className="bg-gradient-to-br from-green-500/20 to-green-600/10 border-green-500/30">
+                  <CardContent className="p-6 text-center">
+                    <Badge className="bg-green-500/20 text-green-400 border-green-500/30 mb-3">
                       Total Pick
                     </Badge>
-                    <div className="text-2xl font-bold text-white mb-2">Over 49.5</div>
-                    <p className="text-sm text-zinc-400">Two explosive offenses</p>
+                    <div className="text-2xl font-bold text-white mb-2">Over 47.5</div>
+                    <p className="text-sm text-zinc-400">Both offenses score</p>
                   </CardContent>
                 </Card>
                 <Card className="bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 border-yellow-500/30">
@@ -188,8 +191,8 @@ export default function SuperBowlPage() {
                     <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 mb-3">
                       Best Bet
                     </Badge>
-                    <div className="text-2xl font-bold text-white mb-2">Eagles ML</div>
-                    <p className="text-sm text-zinc-400">+110 value is too good</p>
+                    <div className="text-2xl font-bold text-white mb-2">K. Walker III ATTS</div>
+                    <p className="text-sm text-zinc-400">Anytime TD scorer -130</p>
                   </CardContent>
                 </Card>
               </div>
@@ -220,7 +223,7 @@ export default function SuperBowlPage() {
                     </div>
                   ))}
                 </div>
-                <Link href="/guides/super-bowl-mvp-odds-2025" className="block text-center mt-4">
+                <Link href="/guides/super-bowl-mvp-odds-2026" className="block text-center mt-4">
                   <Button variant="outline" className="border-zinc-700 text-zinc-300 hover:bg-zinc-800">
                     Full MVP Analysis →
                   </Button>
@@ -242,7 +245,7 @@ export default function SuperBowlPage() {
                     >
                       <div className="flex items-center gap-3">
                         <span className={`px-2 py-1 rounded text-xs font-bold ${
-                          player.team === 'KC' ? 'bg-red-500/20 text-red-400' : 'bg-green-500/20 text-green-400'
+                          player.team === 'SEA' ? 'bg-blue-500/20 text-blue-400' : 'bg-red-500/20 text-red-400'
                         }`}>
                           {player.team}
                         </span>
@@ -292,7 +295,7 @@ export default function SuperBowlPage() {
                   </Card>
                 ))}
               </div>
-              <Link href="/guides/super-bowl-prop-bets-2025" className="block text-center mt-4">
+              <Link href="/guides/super-bowl-prop-bets-2026" className="block text-center mt-4">
                 <Button variant="outline" className="border-zinc-700 text-zinc-300 hover:bg-zinc-800">
                   View All 50+ Props →
                 </Button>
@@ -311,7 +314,7 @@ export default function SuperBowlPage() {
                     href={`/guides/${guide.slug}`}
                     className="block p-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-emerald-500/50 transition-colors group"
                   >
-                    <Badge variant="outline" className="text-xs text-red-400 border-red-500/30 mb-2">
+                    <Badge variant="outline" className="text-xs text-blue-400 border-blue-500/30 mb-2">
                       Super Bowl
                     </Badge>
                     <h3 className="font-medium text-white group-hover:text-emerald-400 transition-colors mb-2">
@@ -329,7 +332,7 @@ export default function SuperBowlPage() {
                     href={`/guides/${guide.slug}`}
                     className="block p-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-emerald-500/50 transition-colors group"
                   >
-                    <Badge variant="outline" className="text-xs text-red-400 border-red-500/30 mb-2">
+                    <Badge variant="outline" className="text-xs text-blue-400 border-blue-500/30 mb-2">
                       Super Bowl
                     </Badge>
                     <h3 className="font-medium text-white group-hover:text-emerald-400 transition-colors mb-2">
@@ -413,7 +416,7 @@ export default function SuperBowlPage() {
                 ))}
               </div>
               <Link 
-                href="/guides/super-bowl-betting-promos-2025"
+                href="/guides/super-bowl-betting-promos-2026"
                 className="block text-center text-sm text-emerald-400 hover:text-emerald-300 mt-4"
               >
                 Full Promo Guide →
@@ -425,17 +428,17 @@ export default function SuperBowlPage() {
               <h3 className="text-lg font-bold text-white mb-4">🏈 Quick Links</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/guides/super-bowl-lix-odds-chiefs-eagles" className="text-sm text-zinc-400 hover:text-emerald-400 flex items-center gap-2">
+                  <Link href="/guides/super-bowl-lx-odds-seahawks-patriots" className="text-sm text-zinc-400 hover:text-emerald-400 flex items-center gap-2">
                     <span>→</span> Complete Betting Guide
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/super-bowl-prop-bets-2025" className="text-sm text-zinc-400 hover:text-emerald-400 flex items-center gap-2">
+                  <Link href="/guides/super-bowl-prop-bets-2026" className="text-sm text-zinc-400 hover:text-emerald-400 flex items-center gap-2">
                     <span>→</span> 50+ Prop Bets
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides/super-bowl-mvp-odds-2025" className="text-sm text-zinc-400 hover:text-emerald-400 flex items-center gap-2">
+                  <Link href="/guides/super-bowl-mvp-odds-2026" className="text-sm text-zinc-400 hover:text-emerald-400 flex items-center gap-2">
                     <span>→</span> MVP Odds Analysis
                   </Link>
                 </li>
@@ -478,21 +481,21 @@ export default function SuperBowlPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SportsEvent",
-            "name": "Super Bowl LIX - Kansas City Chiefs vs Philadelphia Eagles",
-            "startDate": "2025-02-09T23:30:00Z",
+            "name": "Super Bowl LX - Seattle Seahawks vs New England Patriots",
+            "startDate": "2026-02-08T23:30:00Z",
             "location": {
               "@type": "Place",
-              "name": "Caesars Superdome",
+              "name": "Levi's Stadium",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "New Orleans",
-                "addressRegion": "LA",
+                "addressLocality": "Santa Clara",
+                "addressRegion": "CA",
                 "addressCountry": "US"
               }
             },
             "competitor": [
-              { "@type": "SportsTeam", "name": "Kansas City Chiefs" },
-              { "@type": "SportsTeam", "name": "Philadelphia Eagles" }
+              { "@type": "SportsTeam", "name": "Seattle Seahawks" },
+              { "@type": "SportsTeam", "name": "New England Patriots" }
             ],
             "offers": {
               "@type": "AggregateOffer",
