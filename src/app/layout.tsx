@@ -102,6 +102,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <script defer src="https://analytics.game-agents.com/script.js" data-website-id="2224240c-2e82-401a-accb-11e6c3703237"></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
