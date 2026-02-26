@@ -1,10 +1,12 @@
 import { sportsbooks, promos } from '@/lib/mock-data';
 import { superBowlInfo, superBowlPromos } from '@/lib/super-bowl-data';
+import { marchMadnessInfo, marchMadnessPromos } from '@/lib/march-madness-data';
 import { SportsbookCardCompact } from '@/components/sportsbook-card';
 import { SportTabs } from '@/components/sport-tabs';
 import { LiveScoresTicker } from '@/components/live-scores';
 import { HomeLiveGames } from '@/components/HomeLiveGames';
 import { SuperBowlCountdown } from '@/components/super-bowl-countdown';
+import { MarchMadnessCountdown } from '@/components/march-madness-countdown';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
@@ -22,30 +24,30 @@ export default function Home() {
       {/* Live Scores Ticker */}
       <LiveScoresTicker />
 
-      {/* Super Bowl Banner */}
-      <section className="bg-gradient-to-r from-blue-950 via-zinc-900 to-red-950 border-b border-blue-500/30">
+      {/* March Madness Banner */}
+      <section className="bg-gradient-to-r from-orange-950 via-zinc-900 to-amber-950 border-b border-orange-500/30">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30 animate-pulse">
-                🏈 SUPER BOWL LX
+              <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/30 animate-pulse">
+                🏀 MARCH MADNESS 2026
               </Badge>
               <div className="text-center md:text-left">
                 <h2 className="text-xl md:text-2xl font-bold text-white">
-                  <span className="text-blue-400">Seahawks</span> vs <span className="text-red-400">Patriots</span>
+                  NCAA Tournament — <span className="text-orange-400">68 Teams, One Champion</span>
                 </h2>
-                <p className="text-sm text-zinc-400">{superBowlInfo.kickoff} • {superBowlInfo.venue}</p>
+                <p className="text-sm text-zinc-400">Selection Sunday Mar 15 • Final Four Apr 4 • Indianapolis</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-center">
-                <SuperBowlCountdown targetDate={superBowlInfo.date} />
+                <MarchMadnessCountdown targetDate={marchMadnessInfo.selectionSunday} />
               </div>
               <Link 
-                href="/super-bowl"
-                className="px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg transition-colors whitespace-nowrap"
+                href="/march-madness"
+                className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-colors whitespace-nowrap"
               >
-                Bet Now →
+                Betting Guide →
               </Link>
             </div>
           </div>

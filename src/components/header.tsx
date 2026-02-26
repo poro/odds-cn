@@ -85,13 +85,13 @@ export function Header() {
             </a>
           </nav>
 
-          {/* Super Bowl CTA Button */}
+          {/* March Madness CTA Button */}
           <div className="hidden md:block">
             <Link
-              href="/super-bowl"
-              className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-lg transition-colors flex items-center gap-2"
+              href="/march-madness"
+              className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
-              🏈 Super Bowl →
+              🏀 March Madness →
             </Link>
           </div>
 
@@ -164,11 +164,11 @@ export function Header() {
                 📋 Lineup Builder
               </a>
               <Link
-                href="/super-bowl"
-                className="mx-4 mt-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-lg text-center flex items-center justify-center gap-2"
+                href="/march-madness"
+                className="mx-4 mt-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg text-center flex items-center justify-center gap-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                🏈 Super Bowl Odds →
+                🏀 March Madness →
               </Link>
             </nav>
           </div>
