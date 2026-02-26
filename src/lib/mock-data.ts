@@ -823,6 +823,34 @@ export const guides: Guide[] = [
     sport: 'NFL',
     readTime: '5 min'
   },
+  // World Cup 2026 Guides
+  {
+    id: 'wc-1',
+    title: 'How to Bet on World Cup 2026: Complete Beginner\'s Guide',
+    slug: 'how-to-bet-world-cup-2026',
+    excerpt: 'Everything you need to know about betting on soccer — moneyline, draw, spreads, totals, props, and futures explained for World Cup 2026.',
+    category: 'World Cup',
+    sport: 'Soccer',
+    readTime: '12 min'
+  },
+  {
+    id: 'wc-2',
+    title: 'Best World Cup 2026 Sportsbook Bonuses & Promos',
+    slug: 'best-world-cup-sportsbook-bonuses',
+    excerpt: 'Detailed comparison of sign-up promos from DraftKings, FanDuel, BetMGM, Caesars, and PointsBet. Find the best bonus for World Cup betting.',
+    category: 'World Cup',
+    sport: 'Soccer',
+    readTime: '10 min'
+  },
+  {
+    id: 'wc-3',
+    title: 'World Cup Group Stage Betting Strategy',
+    slug: 'world-cup-group-stage-betting-strategy',
+    excerpt: 'How groups work in the expanded 48-team format, dead rubber matches, goal difference tiebreakers, and stacking strategies for the group stage.',
+    category: 'World Cup',
+    sport: 'Soccer',
+    readTime: '14 min'
+  },
 ];
 
 export const sportCategories = [

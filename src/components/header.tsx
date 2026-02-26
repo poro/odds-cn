@@ -85,13 +85,13 @@ export function Header() {
             </a>
           </nav>
 
-          {/* March Madness CTA Button */}
-          <div className="hidden md:block">
+          {/* World Cup CTA Button */}
+          <div className="hidden md:flex items-center gap-2">
             <Link
-              href="/march-madness"
-              className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg transition-colors flex items-center gap-2"
+              href="/world-cup-2026"
+              className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold rounded-lg transition-colors flex items-center gap-2"
             >
-              🏀 March Madness →
+              ⚽ World Cup 2026 →
             </Link>
           </div>
 
@@ -164,11 +164,11 @@ export function Header() {
                 📋 Lineup Builder
               </a>
               <Link
-                href="/march-madness"
-                className="mx-4 mt-2 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded-lg text-center flex items-center justify-center gap-2"
+                href="/world-cup-2026"
+                className="mx-4 mt-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold rounded-lg text-center flex items-center justify-center gap-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                🏀 March Madness →
+                ⚽ World Cup 2026 →
               </Link>
             </nav>
           </div>

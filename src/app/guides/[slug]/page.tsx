@@ -1,5 +1,6 @@
 import { guides, sportsbooks } from '@/lib/mock-data';
 import { superBowlGuideContent, superBowlPromos } from '@/lib/super-bowl-data';
+import { worldCupGuideContent, worldCupPromos } from '@/lib/world-cup-data';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -253,11 +254,13 @@ export default async function GuidePage({ params }: GuidePageProps) {
     notFound();
   }
 
-  const content = guideContent[slug] || superBowlGuideContent[slug] || defaultContent;
+  const content = guideContent[slug] || superBowlGuideContent[slug] || worldCupGuideContent[slug] || defaultContent;
   const isSuperBowlGuide = guide.category === 'Super Bowl';
+  const isWorldCupGuide = guide.category === 'World Cup';
   const relatedGuides = guides.filter(g => g.category === guide.category && g.id !== guide.id).slice(0, 3);
   const topSportsbooks = sportsbooks.slice(0, 2);
   const sbPromo = isSuperBowlGuide ? superBowlPromos[0] : null;
+  const wcPromo = isWorldCupGuide ? worldCupPromos[0] : null;
 
   return (
     <div className="min-h-screen">
@@ -279,10 +282,12 @@ export default async function GuidePage({ params }: GuidePageProps) {
                     ? 'bg-orange-500/20 text-orange-400 border-orange-500/30'
                     : guide.category === 'Super Bowl'
                       ? 'bg-red-500/20 text-red-400 border-red-500/30'
-                      : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                      : guide.category === 'World Cup'
+                        ? 'bg-green-500/20 text-green-400 border-green-500/30'
+                        : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
             }`}
           >
-            {guide.category === 'Super Bowl' ? '🏈 Super Bowl LX' : guide.category}
+            {guide.category === 'Super Bowl' ? '🏈 Super Bowl LX' : guide.category === 'World Cup' ? '⚽ World Cup 2026' : guide.category}
           </Badge>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {guide.title}
@@ -385,6 +390,39 @@ export default async function GuidePage({ params }: GuidePageProps) {
                     </a>
                   </Button>
                   <p className="text-xs text-zinc-500 mt-2">21+ • T&Cs Apply</p>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* World Cup Hub Link for WC guides */}
+            {isWorldCupGuide && wcPromo && (
+              <Card className="bg-gradient-to-br from-green-500/20 to-green-600/10 border-green-500/30">
+                <CardContent className="p-6">
+                  <Badge className="bg-green-500/20 text-green-400 border-green-500/30 mb-3">⚽ World Cup Bonus</Badge>
+                  <h3 className="text-lg font-bold text-white mb-2">{wcPromo.sportsbook}</h3>
+                  <p className="text-2xl font-bold text-green-400 mb-2">{wcPromo.bonus}</p>
+                  {wcPromo.code && (
+                    <div className="bg-zinc-900 border border-dashed border-zinc-600 rounded-lg p-2 mb-4 text-center">
+                      <span className="text-xs text-zinc-500">Code: </span>
+                      <span className="font-mono font-bold text-green-400">{wcPromo.code}</span>
+                    </div>
+                  )}
+                  <Button asChild className="w-full bg-green-500 hover:bg-green-600">
+                    <a href={wcPromo.affiliateUrl} target="_blank" rel="noopener noreferrer">Claim Bonus →</a>
+                  </Button>
+                  <p className="text-xs text-zinc-500 text-center mt-2">21+ • T&Cs Apply</p>
+                </CardContent>
+              </Card>
+            )}
+
+            {isWorldCupGuide && (
+              <Card className="bg-zinc-900 border-zinc-800">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-white mb-3">⚽ World Cup Hub</h3>
+                  <p className="text-sm text-zinc-400 mb-4">Get all World Cup 2026 odds, match lines, and promos in one place.</p>
+                  <Link href="/world-cup-2026">
+                    <Button className="w-full bg-green-500 hover:bg-green-600">View World Cup Hub →</Button>
+                  </Link>
                 </CardContent>
               </Card>
             )}

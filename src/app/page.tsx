@@ -24,6 +24,33 @@ export default function Home() {
       {/* Live Scores Ticker */}
       <LiveScoresTicker />
 
+      {/* World Cup 2026 Banner */}
+      <section className="bg-gradient-to-r from-green-950 via-zinc-900 to-emerald-950 border-b border-green-500/30">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <Badge className="bg-green-500/20 text-green-400 border-green-500/30 animate-pulse">
+                ⚽ WORLD CUP 2026
+              </Badge>
+              <div className="text-center md:text-left">
+                <h2 className="text-xl md:text-2xl font-bold text-white">
+                  FIFA World Cup — <span className="text-green-400">48 Teams, 16 Cities</span>
+                </h2>
+                <p className="text-sm text-zinc-400">June 11 – July 19 • USA / Mexico / Canada</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <Link 
+                href="/world-cup-2026"
+                className="px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition-colors whitespace-nowrap"
+              >
+                World Cup Odds →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* March Madness Banner */}
       <section className="bg-gradient-to-r from-orange-950 via-zinc-900 to-amber-950 border-b border-orange-500/30">
         <div className="max-w-7xl mx-auto px-4 py-6">
