@@ -4,6 +4,7 @@ import { SportsbookCardCompact } from '@/components/sportsbook-card';
 import { SportTabs } from '@/components/sport-tabs';
 import { LiveScoresTicker } from '@/components/live-scores';
 import { HomeLiveGames } from '@/components/HomeLiveGames';
+import { HomeOddsComparison } from '@/components/HomeOddsComparison';
 import { SuperBowlCountdown } from '@/components/super-bowl-countdown';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
@@ -100,6 +101,11 @@ export default function Home() {
           {/* Live Games Section */}
           <div className="lg:col-span-2">
             <HomeLiveGames />
+            
+            {/* Odds Comparison */}
+            <div className="mt-8">
+              <HomeOddsComparison />
+            </div>
           </div>
 
           {/* Sidebar */}

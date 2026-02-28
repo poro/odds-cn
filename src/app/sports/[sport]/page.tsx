@@ -4,6 +4,7 @@ import { SportTabs } from '@/components/sport-tabs';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { SportLiveScoresWrapper } from './SportLiveScoresWrapper';
+import { SportOddsWrapper } from './SportOddsWrapper';
 
 interface SportPageProps {
   params: Promise<{ sport: string }>;
@@ -66,6 +67,11 @@ export default async function SportPage({ params }: SportPageProps) {
           {/* Live Scores Section */}
           <div className="lg:col-span-2">
             <SportLiveScoresWrapper sport={sport} />
+            
+            {/* Odds Comparison */}
+            <div className="mt-8">
+              <SportOddsWrapper sport={sport} />
+            </div>
           </div>
 
           {/* Sidebar */}

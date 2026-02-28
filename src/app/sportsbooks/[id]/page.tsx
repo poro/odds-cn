@@ -1,4 +1,6 @@
-import { sportsbooks, promos, games } from '@/lib/mock-data';
+import { sportsbooks, promos } from '@/lib/mock-data';
+import { fetchAllOdds, isOddsApiConfigured } from '@/lib/odds-api';
+import { games as mockGames } from '@/lib/mock-data';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -56,8 +58,14 @@ export default async function SportsbookPage({ params }: SportsbookPageProps) {
   const bookPromos = promos.filter(p => p.sportsbook === book.name || p.sportsbook.toLowerCase().includes(book.id));
   const otherBooks = sportsbooks.filter(s => s.id !== id).slice(0, 3);
 
-  // Sample games this sportsbook has odds for
-  const bookGames = games.filter(g => g.odds.some(o => o.sportsbook === book.name)).slice(0, 3);
+  // Fetch real odds if available, fallback to mock
+  let allGames;
+  if (isOddsApiConfigured()) {
+    allGames = await fetchAllOdds();
+  } else {
+    allGames = mockGames;
+  }
+  const bookGames = allGames.filter(g => g.odds.some(o => o.sportsbook === book.name)).slice(0, 3);
 
   return (
     <div className="min-h-screen">
