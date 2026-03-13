@@ -141,7 +141,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-zinc-800">
+        {/* From Our Network */}
+        <div className="mt-8 pt-6 border-t border-zinc-800">
+          <p className="text-xs text-zinc-500 mb-2">From Our Network</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            <a href="https://meatlover.com" target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">MeatLover — BBQ & Grilling</a>
+            <a href="https://stereos.com" target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">Stereos — Audio Reviews</a>
+            <a href="https://cmnn.com" target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">CMNN — News</a>
+            <a href="https://subs.game-agents.com" target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">AI Spend — AI Cost Tracker</a>
+            <a href="https://lineup.guru" target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">Lineup Guru — DFS Lineups</a>
+          </div>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-zinc-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-zinc-500">
               © 2026 odds.cn. All rights reserved.
